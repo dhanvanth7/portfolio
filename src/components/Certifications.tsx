@@ -54,7 +54,7 @@ const Certifications = () => {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.15 });
 
   return (
-    <section id="certifications" className="relative z-10 py-10 md:py-16">
+    <section id="certifications" className="relative z-10 py-12 md:py-20">
       <div className="section-container" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -71,18 +71,18 @@ const Certifications = () => {
           <div className="section-divider" />
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 md:gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
           {certifications.map((cert, i) => (
             <motion.div
               key={cert.name}
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.4, delay: 0.1 + i * 0.08 }}
-              className="glass-card rounded-3xl p-6 sm:p-7 md:p-8 flex items-center justify-between gap-5 group overflow-hidden text-left"
+              className="glass-card rounded-lg p-6 sm:p-7 md:p-8 flex items-center justify-between gap-5 group text-left"
             >
               <div className="flex items-center gap-4 min-w-0 flex-1">
                 <div
-                  className="w-13 h-13 rounded-2xl flex items-center justify-center shrink-0 transition-transform duration-200"
+                  className="w-13 h-13 rounded-md flex items-center justify-center shrink-0 transition-transform duration-200"
                   style={{
                     width: '3.25rem',
                     height: '3.25rem',
@@ -103,7 +103,7 @@ const Certifications = () => {
                 </div>
               </div>
 
-              <div className="shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+              <div className="shrink-0 flex items-center justify-center w-8 h-8 rounded-md bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
                 <HiCheckCircle size={18} />
               </div>
             </motion.div>

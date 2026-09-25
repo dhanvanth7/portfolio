@@ -45,7 +45,7 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="relative z-10 py-10 md:py-16">
+    <section id="contact" className="relative z-10 py-12 md:py-20">
       <div className="section-container" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -65,15 +65,15 @@ const Contact = () => {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-          {/* Extra-Spacious Contact Form Card */}
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+          {/* Spacious Rectangular Contact Form Card */}
           <motion.div
             className="lg:col-span-7"
             initial={{ opacity: 0, x: -30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <form onSubmit={handleSubmit} className="glass-card rounded-3xl p-8 sm:p-10 md:p-12 lg:p-14 space-y-7 md:space-y-8 border border-white/10 overflow-hidden text-left">
+            <form onSubmit={handleSubmit} className="glass-card rounded-lg p-8 sm:p-10 md:p-12 lg:p-14 space-y-7 md:space-y-8 border border-white/10 text-left">
               <div className="grid sm:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="contact-name" className="block text-xs md:text-sm font-semibold text-slate-200 uppercase tracking-wider mb-3 font-mono">
@@ -84,7 +84,7 @@ const Contact = () => {
                     type="text"
                     required
                     placeholder="e.g. Alex Smith"
-                    className="form-input py-4 px-5 text-base"
+                    className="form-input py-4 px-5 text-base rounded-md"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   />
@@ -98,7 +98,7 @@ const Contact = () => {
                     type="email"
                     required
                     placeholder="e.g. alex@example.com"
-                    className="form-input py-4 px-5 text-base"
+                    className="form-input py-4 px-5 text-base rounded-md"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   />
@@ -114,7 +114,7 @@ const Contact = () => {
                   required
                   rows={5}
                   placeholder="Share details about your message, role, or project..."
-                  className="form-input py-4 px-5 text-base resize-none"
+                  className="form-input py-4 px-5 text-base resize-none rounded-md"
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 />
@@ -122,7 +122,7 @@ const Contact = () => {
 
               <button
                 type="submit"
-                className="glow-btn w-full py-4.5 rounded-xl text-white font-bold text-base flex items-center justify-center gap-3 transition-transform active:scale-[0.99] shadow-md"
+                className="glow-btn w-full py-4.5 rounded-md text-white font-bold text-base flex items-center justify-center gap-3 transition-transform active:scale-[0.99] shadow-md"
                 style={{ padding: '1.125rem' }}
               >
                 {submitted ? (
@@ -140,7 +140,7 @@ const Contact = () => {
             </form>
           </motion.div>
 
-          {/* Extra-Spacious Contact Info Sidebar */}
+          {/* Spacious Contact Info Sidebar */}
           <motion.div
             className="lg:col-span-5 space-y-6"
             initial={{ opacity: 0, x: 30 }}
@@ -148,11 +148,11 @@ const Contact = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             {/* Contact details */}
-            <div className="space-y-5">
+            <div className="space-y-6">
               {contactInfo.map((info) => (
-                <div key={info.label} className="glass-card rounded-2xl p-6 sm:p-7 flex items-center gap-5 sm:gap-6 border border-white/10 overflow-hidden text-left">
+                <div key={info.label} className="glass-card rounded-lg p-6 sm:p-7 flex items-center gap-5 sm:gap-6 border border-white/10 text-left">
                   <div
-                    className="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
+                    className="w-14 h-14 rounded-md flex items-center justify-center shrink-0 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
                     style={{ width: '3.5rem', height: '3.5rem' }}
                   >
                     {info.icon}
@@ -177,7 +177,7 @@ const Contact = () => {
             </div>
 
             {/* Social links box */}
-            <div className="glass-card rounded-2xl p-6 sm:p-7 border border-white/10 overflow-hidden text-left">
+            <div className="glass-card rounded-lg p-6 sm:p-7 border border-white/10 text-left">
               <p className="text-xs md:text-sm font-semibold uppercase tracking-wider text-slate-400 mb-4 font-mono">
                 Social & Developer Profiles
               </p>
@@ -189,7 +189,7 @@ const Contact = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={social.label}
-                    className="w-13 h-13 rounded-2xl flex items-center justify-center transition-transform duration-200 hover:scale-105 shrink-0"
+                    className="w-13 h-13 rounded-md flex items-center justify-center transition-transform duration-200 hover:scale-105 shrink-0"
                     style={{
                       width: '3.25rem',
                       height: '3.25rem',

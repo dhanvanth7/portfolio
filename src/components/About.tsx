@@ -13,7 +13,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="relative z-10 py-10 md:py-16">
+    <section id="about" className="relative z-10 py-12 md:py-20">
       <div className="section-container" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -30,15 +30,15 @@ const About = () => {
           <div className="section-divider" />
         </motion.div>
 
-        <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
-          {/* Spacious Bio Card */}
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-stretch">
+          {/* Spacious Rectangular Bio Card (No rounded corners cutting text) */}
           <motion.div
-            className="lg:col-span-7 glass-card rounded-3xl p-8 sm:p-10 md:p-12 lg:p-14 flex flex-col justify-between overflow-hidden"
+            className="lg:col-span-7 glass-card rounded-lg p-8 sm:p-10 md:p-12 lg:p-14 flex flex-col justify-between text-left"
             initial={{ opacity: 0, x: -30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="space-y-6 md:space-y-8 text-left">
+            <div className="space-y-7 md:space-y-8">
               <p className="text-lg md:text-xl font-normal leading-relaxed text-slate-100 break-words">
                 I'm a <span className="text-white font-semibold underline decoration-emerald-500/50 decoration-2 underline-offset-4">Computer Science student</span> specializing
                 in <span className="gradient-text font-semibold">Artificial Intelligence & Machine Learning</span> at{' '}
@@ -55,8 +55,8 @@ const About = () => {
               </p>
             </div>
 
-            {/* Core Competencies Tags with spacious margins */}
-            <div className="pt-8 border-t border-white/10 mt-8 text-left">
+            {/* Core Competencies Tags */}
+            <div className="pt-8 border-t border-white/10 mt-8">
               <p className="text-xs md:text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4 flex items-center gap-2 font-mono">
                 <HiSparkles className="text-emerald-400" size={16} /> Core Competencies
               </p>
@@ -70,25 +70,25 @@ const About = () => {
             </div>
           </motion.div>
 
-          {/* Spacious Stats & Education column */}
+          {/* Spacious Stats & Education Column */}
           <motion.div
-            className="lg:col-span-5 flex flex-col justify-between gap-6"
+            className="lg:col-span-5 flex flex-col justify-between gap-6 md:gap-7"
             initial={{ opacity: 0, x: 30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             {/* Stat cards stack */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6">
               {stats.map((stat, i) => (
                 <motion.div
                   key={stat.label}
                   initial={{ opacity: 0, y: 15 }}
                   animate={inView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.4, delay: 0.4 + i * 0.1 }}
-                  className="glass-card rounded-3xl p-6 sm:p-7 md:p-8 flex items-center gap-5 sm:gap-6 overflow-hidden text-left"
+                  className="glass-card rounded-lg p-6 sm:p-7 md:p-8 flex items-center gap-6 text-left"
                 >
                   <div
-                    className="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 text-emerald-400 bg-emerald-500/10 border border-emerald-500/20"
+                    className="w-14 h-14 rounded-md flex items-center justify-center shrink-0 text-emerald-400 bg-emerald-500/10 border border-emerald-500/20"
                     style={{ width: '3.5rem', height: '3.5rem' }}
                   >
                     {stat.icon}
@@ -108,16 +108,16 @@ const About = () => {
               initial={{ opacity: 0, y: 15 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.4, delay: 0.7 }}
-              className="glass-card rounded-3xl p-7 sm:p-8 md:p-9 border-emerald-500/20 space-y-5 overflow-hidden text-left"
+              className="glass-card rounded-lg p-7 sm:p-8 md:p-9 border-emerald-500/20 space-y-5 text-left"
             >
               <div className="flex items-center justify-between gap-3">
                 <div className="flex items-center gap-3.5">
-                  <div className="w-11 h-11 rounded-xl flex items-center justify-center bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 shrink-0">
+                  <div className="w-11 h-11 rounded-md flex items-center justify-center bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 shrink-0">
                     <FaGraduationCap size={20} />
                   </div>
                   <span className="font-bold text-white text-base md:text-lg">Formal Education</span>
                 </div>
-                <span className="text-xs font-mono px-3.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 shrink-0">
+                <span className="text-xs font-mono px-3.5 py-1 rounded-md bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 shrink-0">
                   Enrolled
                 </span>
               </div>

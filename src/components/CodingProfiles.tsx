@@ -51,7 +51,7 @@ const CodingProfiles = () => {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.15 });
 
   return (
-    <section id="profiles" className="relative z-10 py-10 md:py-16">
+    <section id="profiles" className="relative z-10 py-12 md:py-20">
       <div className="section-container" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -68,7 +68,7 @@ const CodingProfiles = () => {
           <div className="section-divider" />
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
           {profiles.map((profile, i) => (
             <motion.a
               key={profile.name}
@@ -78,12 +78,12 @@ const CodingProfiles = () => {
               initial={{ opacity: 0, y: 25 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.4, delay: 0.15 + i * 0.1 }}
-              className="glass-card rounded-3xl p-8 sm:p-9 md:p-11 flex flex-col items-center justify-between text-center group border border-white/10 overflow-hidden"
+              className="glass-card rounded-lg p-8 sm:p-9 md:p-11 flex flex-col items-center justify-between text-center group border border-white/10"
             >
               <div className="flex flex-col items-center w-full">
                 {/* Brand icon container with ample breathing room */}
                 <div
-                  className="w-18 h-18 rounded-2xl flex items-center justify-center mb-6 transition-transform duration-200 group-hover:scale-105 shadow-lg"
+                  className="w-18 h-18 rounded-md flex items-center justify-center mb-6 transition-transform duration-200 group-hover:scale-105 shadow-lg"
                   style={{
                     width: '4.75rem',
                     height: '4.75rem',
@@ -105,7 +105,7 @@ const CodingProfiles = () => {
 
               <div className="w-full pt-5 border-t border-white/10 flex flex-col items-center gap-4">
                 <span
-                  className="text-xs md:text-sm font-semibold px-4 py-2 rounded-full w-full break-words"
+                  className="text-xs md:text-sm font-semibold px-4 py-2 rounded-md w-full break-words"
                   style={{
                     background: `${profile.color}12`,
                     color: profile.color,

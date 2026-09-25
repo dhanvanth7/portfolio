@@ -55,7 +55,7 @@ const Projects = () => {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <section id="projects" className="relative z-10 py-10 md:py-16">
+    <section id="projects" className="relative z-10 py-12 md:py-20">
       <div className="section-container" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -72,14 +72,14 @@ const Projects = () => {
           <div className="section-divider" />
         </motion.div>
 
-        <div className="space-y-12 md:space-y-14">
+        <div className="space-y-16 md:space-y-20">
           {projects.map((project, i) => (
             <motion.div
               key={project.title}
               initial={{ opacity: 0, y: 35 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 + i * 0.2 }}
-              className="glass-card rounded-3xl overflow-hidden group border border-white/10 text-left"
+              className="glass-card rounded-lg overflow-hidden group border border-white/10 text-left"
             >
               {/* Gradient accent top bar */}
               <div
@@ -91,7 +91,7 @@ const Projects = () => {
                 <div className="flex flex-col lg:flex-row lg:items-start gap-8 sm:gap-10">
                   {/* Project Emblem */}
                   <div
-                    className="w-20 h-20 rounded-2xl flex items-center justify-center text-4xl shrink-0 transition-transform duration-300 group-hover:scale-105 shadow-xl"
+                    className="w-20 h-20 rounded-md flex items-center justify-center text-4xl shrink-0 transition-transform duration-300 group-hover:scale-105 shadow-xl"
                     style={{
                       width: '5rem',
                       height: '5rem',
@@ -109,7 +109,7 @@ const Projects = () => {
                           {project.title}
                         </h3>
                         <span
-                          className={`text-xs md:text-sm font-semibold px-4 py-1.5 rounded-full border shrink-0 ${project.badgeColor}`}
+                          className={`text-xs md:text-sm font-semibold px-4 py-1.5 rounded-md border shrink-0 ${project.badgeColor}`}
                         >
                           {project.badge}
                         </span>
@@ -156,7 +156,7 @@ const Projects = () => {
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl text-sm font-semibold text-slate-200 bg-white/5 hover:bg-white/10 border border-white/10 transition-all duration-200 hover:text-white hover:border-emerald-500/40"
+                        className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-md text-sm font-semibold text-slate-200 bg-white/5 hover:bg-white/10 border border-white/10 transition-all duration-200 hover:text-white hover:border-emerald-500/40"
                       >
                         <FaGithub size={18} />
                         Source Code
@@ -165,7 +165,7 @@ const Projects = () => {
                         href={project.demo}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl text-sm font-semibold text-white bg-emerald-600/30 hover:bg-emerald-600/50 border border-emerald-500/40 transition-all duration-200"
+                        className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-md text-sm font-semibold text-white bg-emerald-600/30 hover:bg-emerald-600/50 border border-emerald-500/40 transition-all duration-200"
                       >
                         <HiExternalLink size={18} className="text-emerald-300" />
                         Live Demo

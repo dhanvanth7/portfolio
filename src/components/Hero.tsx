@@ -14,7 +14,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full mb-8 border border-emerald-500/25 bg-emerald-500/10 text-emerald-300 shadow-sm"
+            className="inline-flex items-center gap-2.5 px-4 py-2 rounded-md mb-8 border border-emerald-500/25 bg-emerald-500/10 text-emerald-300 shadow-sm"
           >
             <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse shrink-0" />
             <span className="text-xs md:text-sm font-mono font-medium tracking-wide">
@@ -59,7 +59,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="flex flex-wrap items-center justify-center gap-4 sm:gap-5 mb-14 w-full sm:w-auto"
+            className="flex flex-wrap items-center justify-center gap-5 mb-16 w-full sm:w-auto"
           >
             <a
               href="#projects"
@@ -67,7 +67,7 @@ const Hero = () => {
                 e.preventDefault();
                 document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="glow-btn px-8 py-4 rounded-xl text-white font-bold text-sm md:text-base flex items-center justify-center gap-2.5 shadow-md w-full sm:w-auto"
+              className="glow-btn px-8 py-4 rounded-md text-white font-bold text-sm md:text-base flex items-center justify-center gap-2.5 shadow-md w-full sm:w-auto"
             >
               <FaCode size={16} />
               Explore Projects
@@ -79,7 +79,7 @@ const Hero = () => {
                 e.preventDefault();
                 document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="outline-btn px-8 py-4 rounded-xl font-bold text-sm md:text-base flex items-center justify-center gap-2.5 w-full sm:w-auto"
+              className="outline-btn px-8 py-4 rounded-md font-bold text-sm md:text-base flex items-center justify-center gap-2.5 w-full sm:w-auto"
             >
               <HiMail size={18} className="text-emerald-400" />
               Contact Me
@@ -89,37 +89,37 @@ const Hero = () => {
               href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="outline-btn px-8 py-4 rounded-xl font-bold text-sm md:text-base flex items-center justify-center gap-2.5 w-full sm:w-auto"
+              className="outline-btn px-8 py-4 rounded-md font-bold text-sm md:text-base flex items-center justify-center gap-2.5 w-full sm:w-auto"
             >
               <HiDownload size={18} />
               Resume
             </a>
           </motion.div>
 
-          {/* Spacious & Overflow-Safe Developer Snapshot Panel */}
+          {/* Spacious & Clean Rectangular Developer Snapshot Panel */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="w-full max-w-4xl glass-card rounded-3xl p-6 sm:p-9 md:p-11 border border-white/10 shadow-2xl overflow-hidden text-left"
+            className="w-full max-w-4xl glass-card rounded-lg p-7 sm:p-10 md:p-12 border border-white/10 shadow-2xl text-left"
           >
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
-              <div className="p-5 rounded-2xl bg-white/[0.03] border border-white/10 overflow-hidden">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+              <div className="p-5 sm:p-6 rounded-md bg-white/[0.03] border border-white/10">
                 <div className="text-xs font-mono text-slate-400 uppercase tracking-wider mb-2">Domain</div>
                 <div className="text-base font-bold text-white break-words">AI & Full-Stack</div>
               </div>
 
-              <div className="p-5 rounded-2xl bg-white/[0.03] border border-white/10 overflow-hidden">
+              <div className="p-5 sm:p-6 rounded-md bg-white/[0.03] border border-white/10">
                 <div className="text-xs font-mono text-slate-400 uppercase tracking-wider mb-2">Academics</div>
                 <div className="text-base font-bold text-emerald-400 break-words">8.41 CGPA</div>
               </div>
 
-              <div className="p-5 rounded-2xl bg-white/[0.03] border border-white/10 overflow-hidden">
+              <div className="p-5 sm:p-6 rounded-md bg-white/[0.03] border border-white/10">
                 <div className="text-xs font-mono text-slate-400 uppercase tracking-wider mb-2">Core Tech</div>
                 <div className="text-base font-bold text-white break-words">Java • SQL • React</div>
               </div>
 
-              <div className="p-5 rounded-2xl bg-white/[0.03] border border-white/10 overflow-hidden">
+              <div className="p-5 sm:p-6 rounded-md bg-white/[0.03] border border-white/10">
                 <div className="text-xs font-mono text-slate-400 uppercase tracking-wider mb-2">Location</div>
                 <div className="text-base font-bold text-white break-words">Andhra Pradesh, IN</div>
               </div>
@@ -128,12 +128,12 @@ const Hero = () => {
             {/* Quick Links inside Snapshot */}
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-8 pt-6 border-t border-white/10 text-xs sm:text-sm text-slate-400">
               <span className="font-mono text-slate-400">Direct profiles:</span>
-              <div className="flex flex-wrap items-center gap-3">
+              <div className="flex flex-wrap items-center gap-3.5">
                 <a
                   href="https://github.com/dhanvanth"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 text-slate-200 hover:text-white transition-colors"
+                  className="flex items-center gap-2 px-4 py-2 rounded-md bg-white/5 hover:bg-white/10 text-slate-200 hover:text-white transition-colors"
                 >
                   <FaGithub size={16} />
                   GitHub
@@ -142,7 +142,7 @@ const Hero = () => {
                   href="https://linkedin.com/in/dhanvanth"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 text-slate-200 hover:text-white transition-colors"
+                  className="flex items-center gap-2 px-4 py-2 rounded-md bg-white/5 hover:bg-white/10 text-slate-200 hover:text-white transition-colors"
                 >
                   <FaLinkedinIn size={16} className="text-emerald-400" />
                   LinkedIn
@@ -151,7 +151,7 @@ const Hero = () => {
                   href="https://leetcode.com/dhanvanth"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 text-slate-200 hover:text-white transition-colors"
+                  className="flex items-center gap-2 px-4 py-2 rounded-md bg-white/5 hover:bg-white/10 text-slate-200 hover:text-white transition-colors"
                 >
                   <SiLeetcode size={16} className="text-amber-400" />
                   LeetCode
@@ -165,7 +165,7 @@ const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.9 }}
-            className="mt-14"
+            className="mt-16"
           >
             <a
               href="#about"

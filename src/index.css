@@ -61,7 +61,7 @@ body {
 
 ::-webkit-scrollbar-thumb {
   background: var(--color-dark-700);
-  border-radius: 3px;
+  border-radius: 2px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -83,12 +83,13 @@ body {
   background-clip: text;
 }
 
-/* ── High-end Carbon Glassmorphism card ── */
+/* ── Clean Rectangular Glassmorphism card (No large rounded corners cutting text) ── */
 .glass-card {
   background: linear-gradient(160deg, rgba(20, 24, 33, 0.8) 0%, rgba(13, 16, 23, 0.9) 100%);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
   box-shadow: 0 4px 24px -2px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.07);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -107,6 +108,7 @@ body {
   background: linear-gradient(135deg, #10b981 0%, #059669 100%);
   color: #ffffff;
   font-weight: 600;
+  border-radius: 6px;
   transition: all 0.25s ease;
   box-shadow: 0 4px 16px rgba(16, 185, 129, 0.3);
 }
@@ -138,6 +140,7 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.12);
   color: #f1f5f9;
   font-weight: 600;
+  border-radius: 6px;
   transition: all 0.25s ease;
   position: relative;
   overflow: hidden;
@@ -185,21 +188,21 @@ body {
   height: 4px;
   border-radius: 2px;
   background: linear-gradient(90deg, #10b981, #14b8a6);
-  margin-bottom: 3rem;
+  margin-bottom: 3.5rem;
 }
 
 /* ── Skill bar ── */
 .skill-bar-bg {
   height: 7px;
   background: rgba(26, 30, 42, 0.95);
-  border-radius: 9999px;
+  border-radius: 3px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .skill-bar-fill {
   height: 100%;
-  border-radius: 9999px;
+  border-radius: 3px;
   background: linear-gradient(90deg, #10b981, #34d399);
   box-shadow: 0 0 10px rgba(16, 185, 129, 0.4);
 }
@@ -240,32 +243,13 @@ body {
   width: 100%;
 }
 
-/* ── Custom cursor ── */
-.custom-cursor {
-  width: 20px;
-  height: 20px;
-  border: 2px solid #10b981;
-  border-radius: 50%;
-  position: fixed;
-  pointer-events: none;
-  z-index: 9999;
-  transition: transform 0.15s ease, opacity 0.15s ease;
-  mix-blend-mode: difference;
-}
-
-.custom-cursor.hovering {
-  transform: scale(2.2);
-  background: rgba(16, 185, 129, 0.2);
-  border-color: #34d399;
-}
-
 /* ── Form inputs ── */
 .form-input {
   width: 100%;
   padding: 1rem 1.25rem;
   background: rgba(15, 18, 25, 0.85);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 0.875rem;
+  border-radius: 6px;
   color: #f8fafc;
   font-family: var(--font-sans);
   font-size: 0.95rem;
@@ -288,7 +272,7 @@ body {
   font-size: 0.825rem;
   font-weight: 500;
   padding: 0.35rem 0.875rem;
-  border-radius: 9999px;
+  border-radius: 4px;
   background: rgba(16, 185, 129, 0.08);
   color: #6ee7b7;
   border: 1px solid rgba(16, 185, 129, 0.2);
