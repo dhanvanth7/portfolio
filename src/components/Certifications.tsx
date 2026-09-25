@@ -38,14 +38,14 @@ const certifications: Certification[] = [
     name: 'HTML & CSS',
     issuer: 'Cisco Networking Academy',
     icon: <SiCisco size={20} />,
-    color: '#818cf8',
+    color: '#34d399',
     category: 'Web Dev',
   },
   {
     name: 'SQL (Basic)',
     issuer: 'HackerRank Verified',
     icon: <FaCode size={20} />,
-    color: '#34d399',
+    color: '#10b981',
     category: 'Database',
   },
 ];

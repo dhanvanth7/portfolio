@@ -20,23 +20,23 @@ const projects: Project[] = [
   {
     title: 'AI Mentor',
     badge: 'Interview Prep Platform',
-    badgeColor: 'text-indigo-400 bg-indigo-500/10 border-indigo-500/20',
+    badgeColor: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20',
     subtitle: 'Personalized AI-Powered Career Coaching & Technical Mock System',
     description: [
       'Designed and engineered a full-stack platform to streamline technical interview preparation for engineering students.',
-      'Constructed automated personalized learning roadmaps adapting dynamically to user skill proficiencies and dream job targets.',
+      'Constructed automated personalized learning roadmaps adapting dynamically to user skill proficiencies and target roles.',
       'Implemented dedicated modules for Skill Gap Analysis, Daily Practice Schedules, Mock Interview Simulation, and Company-Specific Prep.',
     ],
     tech: ['HTML5', 'CSS3', 'Java', 'SQL', 'Prompt Engineering', 'AI APIs'],
     github: 'https://github.com/dhanvanth/ai-mentor',
     demo: '#',
-    gradient: 'linear-gradient(135deg, #6366f1, #8b5cf6)',
+    gradient: 'linear-gradient(135deg, #10b981, #059669)',
     icon: '🤖',
   },
   {
     title: 'BIS SmartAssist',
     badge: 'Smart India Hackathon',
-    badgeColor: 'text-cyan-400 bg-cyan-500/10 border-cyan-500/20',
+    badgeColor: 'text-teal-400 bg-teal-500/10 border-teal-500/20',
     subtitle: 'Intelligent Standards Compliance & Verification Assistant',
     description: [
       'Architected an intelligent assistant layered on the Bureau of Indian Standards (BIS) regulatory framework for seamless compliance checking.',
@@ -46,7 +46,7 @@ const projects: Project[] = [
     tech: ['React', 'TypeScript', 'Tailwind CSS', 'Java 21', 'Spring Boot', 'LangChain4j', 'PostgreSQL', 'Docker'],
     github: 'https://github.com/dhanvanth/bis-smartassist',
     demo: '#',
-    gradient: 'linear-gradient(135deg, #06b6d4, #3b82f6)',
+    gradient: 'linear-gradient(135deg, #14b8a6, #0284c7)',
     icon: '🏛️',
   },
 ];
@@ -63,8 +63,8 @@ const Projects = () => {
           transition={{ duration: 0.6 }}
         >
           <div className="flex items-center gap-2 mb-3">
-            <span className="w-2 h-2 rounded-full bg-violet-500 animate-pulse" />
-            <span className="text-xs font-mono tracking-widest text-violet-400 uppercase">Portfolio Showcase</span>
+            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+            <span className="text-xs font-mono tracking-widest text-emerald-400 uppercase">Portfolio Showcase</span>
           </div>
           <h2 className="section-heading">
             Featured <span className="gradient-text">Projects</span>
@@ -79,7 +79,7 @@ const Projects = () => {
               initial={{ opacity: 0, y: 35 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 + i * 0.2 }}
-              className="glass-card rounded-2xl overflow-hidden group border border-slate-700/60"
+              className="glass-card rounded-2xl overflow-hidden group border border-white/5"
             >
               {/* Gradient accent top bar */}
               <div
@@ -127,7 +127,7 @@ const Projects = () => {
                         >
                           <FaCheckCircle
                             size={14}
-                            className="mt-1 shrink-0 text-indigo-400"
+                            className="mt-1 shrink-0 text-emerald-400"
                           />
                           <span>{point}</span>
                         </div>
@@ -135,9 +135,9 @@ const Projects = () => {
                     </div>
 
                     {/* Tech Stack Pills */}
-                    <div className="pt-4 border-t border-slate-800 mb-6">
+                    <div className="pt-4 border-t border-white/5 mb-6">
                       <p className="text-xs font-mono uppercase tracking-wider text-slate-400 mb-2.5 flex items-center gap-1.5">
-                        <FaProjectDiagram size={12} className="text-indigo-400" /> Technologies & Tools
+                        <FaProjectDiagram size={12} className="text-emerald-400" /> Technologies & Tools
                       </p>
                       <div className="flex flex-wrap gap-2">
                         {project.tech.map((t) => (
@@ -154,7 +154,7 @@ const Projects = () => {
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs md:text-sm font-medium text-slate-200 bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 transition-all duration-200 hover:text-white hover:border-slate-500"
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs md:text-sm font-medium text-slate-200 bg-white/5 hover:bg-white/10 border border-white/10 transition-all duration-200 hover:text-white hover:border-emerald-500/40"
                       >
                         <FaGithub size={16} />
                         Source Code
@@ -163,9 +163,9 @@ const Projects = () => {
                         href={project.demo}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs md:text-sm font-medium text-white bg-indigo-600/30 hover:bg-indigo-600/50 border border-indigo-500/40 transition-all duration-200"
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs md:text-sm font-medium text-white bg-emerald-600/30 hover:bg-emerald-600/50 border border-emerald-500/40 transition-all duration-200"
                       >
-                        <HiExternalLink size={16} className="text-indigo-300" />
+                        <HiExternalLink size={16} className="text-emerald-300" />
                         Live Demo
                       </a>
                     </div>

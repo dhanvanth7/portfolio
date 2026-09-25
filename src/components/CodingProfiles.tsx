@@ -25,7 +25,7 @@ const profiles: Profile[] = [
     name: 'CodeChef',
     icon: <SiCodechef size={32} />,
     url: 'https://codechef.com/users/dhanvanth',
-    color: '#a78bfa',
+    color: '#34d399',
     username: 'dhanvanth',
     stat: 'Competitive Coder',
   },
@@ -33,7 +33,7 @@ const profiles: Profile[] = [
     name: 'HackerRank',
     icon: <SiHackerrank size={32} />,
     url: 'https://hackerrank.com/dhanvanth',
-    color: '#34d399',
+    color: '#10b981',
     username: 'dhanvanth',
     stat: 'SQL & Java Certified',
   },
@@ -59,8 +59,8 @@ const CodingProfiles = () => {
           transition={{ duration: 0.6 }}
         >
           <div className="flex items-center gap-2 mb-3">
-            <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
-            <span className="text-xs font-mono tracking-widest text-amber-400 uppercase">Competitive Programming</span>
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            <span className="text-xs font-mono tracking-widest text-emerald-400 uppercase">Competitive Programming</span>
           </div>
           <h2 className="section-heading">
             Coding <span className="gradient-text">Profiles</span>
@@ -78,7 +78,7 @@ const CodingProfiles = () => {
               initial={{ opacity: 0, y: 25 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.4, delay: 0.15 + i * 0.1 }}
-              className="glass-card rounded-2xl p-6 flex flex-col items-center justify-between text-center group border border-slate-700/60"
+              className="glass-card rounded-2xl p-6 flex flex-col items-center justify-between text-center group border border-white/5"
             >
               <div className="flex flex-col items-center w-full">
                 {/* Brand icon */}
@@ -93,7 +93,7 @@ const CodingProfiles = () => {
                   {profile.icon}
                 </div>
 
-                <h3 className="font-bold text-white text-base md:text-lg mb-1 group-hover:text-indigo-300 transition-colors">
+                <h3 className="font-bold text-white text-base md:text-lg mb-1 group-hover:text-emerald-300 transition-colors">
                   {profile.name}
                 </h3>
                 <p className="text-xs font-mono text-slate-400 mb-4">
@@ -101,7 +101,7 @@ const CodingProfiles = () => {
                 </p>
               </div>
 
-              <div className="w-full pt-3 border-t border-slate-800 flex flex-col items-center gap-3">
+              <div className="w-full pt-3 border-t border-white/5 flex flex-col items-center gap-3">
                 <span
                   className="text-xs font-semibold px-3 py-1 rounded-full w-full truncate"
                   style={{
@@ -114,7 +114,7 @@ const CodingProfiles = () => {
                 </span>
 
                 <span className="inline-flex items-center gap-1 text-xs font-medium text-slate-400 group-hover:text-white transition-colors">
-                  View Profile <HiArrowNarrowRight className="transition-transform group-hover:translate-x-1" />
+                  View Profile <HiArrowNarrowRight className="transition-transform group-hover:translate-x-1 text-emerald-400" />
                 </span>
               </div>
             </motion.a>

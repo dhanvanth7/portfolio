@@ -24,7 +24,7 @@ interface SkillCategory {
 const skillCategories: SkillCategory[] = [
   {
     title: 'Programming Languages',
-    categoryIcon: <FaCode className="text-indigo-400" size={16} />,
+    categoryIcon: <FaCode className="text-emerald-400" size={16} />,
     skills: [
       { name: 'C', icon: <SiC size={22} />, level: 85, color: '#659ad2' },
       { name: 'C++', icon: <SiCplusplus size={22} />, level: 80, color: '#00599c' },
@@ -33,7 +33,7 @@ const skillCategories: SkillCategory[] = [
   },
   {
     title: 'Web Technologies',
-    categoryIcon: <FaLayerGroup className="text-cyan-400" size={16} />,
+    categoryIcon: <FaLayerGroup className="text-teal-400" size={16} />,
     skills: [
       { name: 'HTML5', icon: <SiHtml5 size={22} />, level: 92, color: '#e34f26' },
       { name: 'CSS3', icon: <SiCss size={22} />, level: 88, color: '#264de4' },
@@ -46,12 +46,12 @@ const skillCategories: SkillCategory[] = [
     skills: [
       { name: 'SQL', icon: <SiMysql size={24} />, level: 84, color: '#00758f' },
       { name: 'Relational Schema', icon: <FaDatabase size={20} />, level: 82, color: '#38bdf8' },
-      { name: 'Query Optimization', icon: <FaCode size={20} />, level: 78, color: '#818cf8' },
+      { name: 'Query Optimization', icon: <FaCode size={20} />, level: 78, color: '#34d399' },
     ],
   },
   {
     title: 'Tools & Platforms',
-    categoryIcon: <FaTools className="text-purple-400" size={16} />,
+    categoryIcon: <FaTools className="text-amber-400" size={16} />,
     skills: [
       { name: 'Git', icon: <SiGit size={22} />, level: 86, color: '#f05032' },
       { name: 'GitHub', icon: <SiGithub size={22} />, level: 90, color: '#e2e8f0' },
@@ -62,10 +62,10 @@ const skillCategories: SkillCategory[] = [
 
 const softSkills = [
   { name: 'Problem Solving', icon: <HiLightBulb className="text-amber-400" size={16} /> },
-  { name: 'Team Collaboration', icon: <HiUserGroup className="text-indigo-400" size={16} /> },
-  { name: 'Adaptability & Agility', icon: <HiLightningBolt className="text-cyan-400" size={16} /> },
+  { name: 'Team Collaboration', icon: <HiUserGroup className="text-emerald-400" size={16} /> },
+  { name: 'Adaptability & Agility', icon: <HiLightningBolt className="text-teal-400" size={16} /> },
   { name: 'Technical Communication', icon: <HiChatAlt2 className="text-emerald-400" size={16} /> },
-  { name: 'Analytical Thinking', icon: <HiSparkles className="text-purple-400" size={16} /> },
+  { name: 'Analytical Thinking', icon: <HiSparkles className="text-amber-400" size={16} /> },
 ];
 
 const Skills = () => {
@@ -80,8 +80,8 @@ const Skills = () => {
           transition={{ duration: 0.6 }}
         >
           <div className="flex items-center gap-2 mb-3">
-            <span className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
-            <span className="text-xs font-mono tracking-widest text-cyan-400 uppercase">Capabilities</span>
+            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+            <span className="text-xs font-mono tracking-widest text-emerald-400 uppercase">Capabilities</span>
           </div>
           <h2 className="section-heading">
             Technical <span className="gradient-text">Skills</span>
@@ -100,7 +100,7 @@ const Skills = () => {
               className="glass-card rounded-2xl p-6 md:p-7 flex flex-col justify-between"
             >
               <div>
-                <div className="flex items-center justify-between pb-4 mb-6 border-b border-slate-800">
+                <div className="flex items-center justify-between pb-4 mb-6 border-b border-white/5">
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-white/5 border border-white/10">
                       {category.categoryIcon}
@@ -109,7 +109,7 @@ const Skills = () => {
                       {category.title}
                     </h3>
                   </div>
-                  <span className="text-xs font-mono text-slate-400 px-2.5 py-1 rounded-full bg-slate-800/80 border border-slate-700/50">
+                  <span className="text-xs font-mono text-slate-400 px-2.5 py-1 rounded-full bg-slate-900/80 border border-white/5">
                     {category.skills.length} skills
                   </span>
                 </div>
@@ -168,17 +168,17 @@ const Skills = () => {
           className="mt-8"
         >
           <div className="glass-card rounded-2xl p-6 md:p-7">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-5 pb-4 border-b border-slate-800">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-5 pb-4 border-b border-white/5">
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
+                <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
                   <HiSparkles size={16} />
                 </div>
                 <h3 className="text-base md:text-lg font-bold text-white">
                   Professional & Soft Skills
                 </h3>
               </div>
-              <span className="text-xs text-slate-400 font-medium">
-                Collaboration & Methodologies
+              <span className="text-xs text-slate-400 font-medium font-mono">
+                Team Collaboration & Methodology
               </span>
             </div>
 
@@ -186,7 +186,7 @@ const Skills = () => {
               {softSkills.map((item) => (
                 <div
                   key={item.name}
-                  className="flex items-center gap-2.5 px-4 py-2.5 rounded-xl text-xs md:text-sm font-medium transition-all duration-300 hover:scale-105 hover:border-indigo-500/40 cursor-default bg-slate-900/60 border border-slate-700/60 text-slate-200"
+                  className="flex items-center gap-2.5 px-4 py-2.5 rounded-xl text-xs md:text-sm font-medium transition-all duration-300 hover:scale-105 hover:border-emerald-500/40 cursor-default bg-slate-900/60 border border-white/5 text-slate-200"
                 >
                   {item.icon}
                   <span>{item.name}</span>

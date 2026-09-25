@@ -53,15 +53,15 @@ const Contact = () => {
           transition={{ duration: 0.6 }}
         >
           <div className="flex items-center gap-2 mb-3">
-            <span className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
-            <span className="text-xs font-mono tracking-widest text-cyan-400 uppercase">Reach out</span>
+            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+            <span className="text-xs font-mono tracking-widest text-emerald-400 uppercase">Direct Channel</span>
           </div>
           <h2 className="section-heading">
             Get In <span className="gradient-text">Touch</span>
           </h2>
           <div className="section-divider" />
           <p className="text-sm md:text-base mb-10 max-w-xl text-slate-300">
-            Have an opportunity, collaboration idea, or project you'd like to discuss? Feel free to reach out directly through the form or contact channels below.
+            Have an opportunity, internship role, or project you'd like to collaborate on? Feel free to reach out directly through the form or my personal channels below.
           </p>
         </motion.div>
 
@@ -73,31 +73,31 @@ const Contact = () => {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <form onSubmit={handleSubmit} className="glass-card rounded-2xl p-6 md:p-8 space-y-5 border border-slate-700/60">
+            <form onSubmit={handleSubmit} className="glass-card rounded-2xl p-6 md:p-8 space-y-5 border border-white/5">
               <div className="grid sm:grid-cols-2 gap-5">
                 <div>
-                  <label htmlFor="contact-name" className="block text-xs font-semibold text-slate-200 uppercase tracking-wider mb-2">
+                  <label htmlFor="contact-name" className="block text-xs font-semibold text-slate-200 uppercase tracking-wider mb-2 font-mono">
                     Your Name
                   </label>
                   <input
                     id="contact-name"
                     type="text"
                     required
-                    placeholder="e.g. John Doe"
+                    placeholder="e.g. Alex Smith"
                     className="form-input"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   />
                 </div>
                 <div>
-                  <label htmlFor="contact-email" className="block text-xs font-semibold text-slate-200 uppercase tracking-wider mb-2">
+                  <label htmlFor="contact-email" className="block text-xs font-semibold text-slate-200 uppercase tracking-wider mb-2 font-mono">
                     Email Address
                   </label>
                   <input
                     id="contact-email"
                     type="email"
                     required
-                    placeholder="e.g. john@example.com"
+                    placeholder="e.g. alex@example.com"
                     className="form-input"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -106,7 +106,7 @@ const Contact = () => {
               </div>
 
               <div>
-                <label htmlFor="contact-message" className="block text-xs font-semibold text-slate-200 uppercase tracking-wider mb-2">
+                <label htmlFor="contact-message" className="block text-xs font-semibold text-slate-200 uppercase tracking-wider mb-2 font-mono">
                   Message
                 </label>
                 <textarea
@@ -149,20 +149,20 @@ const Contact = () => {
             {/* Contact details */}
             <div className="space-y-3">
               {contactInfo.map((info) => (
-                <div key={info.label} className="glass-card rounded-xl p-4 md:p-5 flex items-center gap-4 border border-slate-700/60">
+                <div key={info.label} className="glass-card rounded-xl p-4 md:p-5 flex items-center gap-4 border border-white/5">
                   <div
-                    className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0 bg-indigo-500/10 text-indigo-400 border border-indigo-500/20"
+                    className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
                   >
                     {info.icon}
                   </div>
                   <div className="min-w-0">
-                    <p className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-0.5">
+                    <p className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-0.5 font-mono">
                       {info.label}
                     </p>
                     {info.href ? (
                       <a
                         href={info.href}
-                        className="text-sm font-semibold text-slate-100 hover:text-indigo-400 transition-colors truncate block"
+                        className="text-sm font-semibold text-slate-100 hover:text-emerald-400 transition-colors truncate block"
                       >
                         {info.value}
                       </a>
@@ -175,9 +175,9 @@ const Contact = () => {
             </div>
 
             {/* Social links */}
-            <div className="glass-card rounded-xl p-5 border border-slate-700/60">
-              <p className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-3.5">
-                Social Profiles & Direct
+            <div className="glass-card rounded-xl p-5 border border-white/5">
+              <p className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-3.5 font-mono">
+                Social & Developer Profiles
               </p>
               <div className="flex items-center gap-3">
                 {socialLinks.map((social) => (
@@ -189,9 +189,9 @@ const Contact = () => {
                     aria-label={social.label}
                     className="w-11 h-11 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110"
                     style={{
-                      background: 'rgba(255, 255, 255, 0.05)',
+                      background: 'rgba(255, 255, 255, 0.04)',
                       color: social.color,
-                      border: '1px solid rgba(255, 255, 255, 0.1)',
+                      border: '1px solid rgba(255, 255, 255, 0.08)',
                     }}
                     onMouseEnter={(e) => {
                       e.currentTarget.style.borderColor = social.color;
@@ -199,8 +199,8 @@ const Contact = () => {
                       e.currentTarget.style.boxShadow = `0 0 16px ${social.color}40`;
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.1)';
-                      e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)';
+                      e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.08)';
+                      e.currentTarget.style.background = 'rgba(255, 255, 255, 0.04)';
                       e.currentTarget.style.boxShadow = 'none';
                     }}
                   >

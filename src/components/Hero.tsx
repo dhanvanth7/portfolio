@@ -1,163 +1,186 @@
 import { motion } from 'framer-motion';
-import { TypeAnimation } from 'react-type-animation';
-import { HiDownload, HiMail } from 'react-icons/hi';
-import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
+import { HiDownload, HiMail, HiArrowNarrowDown } from 'react-icons/hi';
+import { FaGithub, FaLinkedinIn, FaCode } from 'react-icons/fa';
+import { SiLeetcode } from 'react-icons/si';
 
 const Hero = () => {
   return (
-    <section id="home" className="relative min-h-[92vh] md:min-h-screen flex items-center justify-center overflow-hidden pt-16">
-      {/* Grid pattern overlay */}
-      <div
-        className="absolute inset-0 z-0 opacity-[0.03]"
-        style={{
-          backgroundImage:
-            'linear-gradient(rgba(99,102,241,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(99,102,241,0.4) 1px, transparent 1px)',
-          backgroundSize: '64px 64px',
-        }}
-      />
-
-      <div className="section-container relative z-10 text-center flex flex-col items-center">
-        {/* Status badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-6 border border-emerald-500/30 bg-emerald-500/10 shadow-sm"
-        >
-          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-          <span className="text-xs md:text-sm font-semibold text-emerald-300">
-            Open to Software Engineer & AI Internships
-          </span>
-        </motion.div>
-
-        {/* Name */}
-        <motion.h1
-          initial={{ opacity: 0, y: 25 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight mb-4 text-white"
-        >
-          Hi, I'm <span className="gradient-text">Dhanvanth</span>
-        </motion.h1>
-
-        {/* Typing animation */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.35 }}
-          className="text-lg sm:text-2xl md:text-3xl font-medium mb-6 h-9 flex items-center justify-center text-indigo-300"
-        >
-          <TypeAnimation
-            sequence={[
-              'AI & ML Engineer',
-              2000,
-              'Full-Stack Developer',
-              2000,
-              'Building Intelligent Systems',
-              2000,
-              'Competitive Programmer',
-              2000,
-            ]}
-            wrapper="span"
-            speed={40}
-            repeat={Infinity}
-            cursor={true}
-            style={{ display: 'inline-block' }}
-          />
-        </motion.div>
-
-        {/* Bio tagline */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="max-w-2xl mx-auto text-sm sm:text-base md:text-lg mb-10 leading-relaxed text-slate-300 font-normal"
-        >
-          Passionate about engineering elegant software architectures, building full-stack web applications, and leveraging artificial intelligence to solve complex real-world challenges.
-        </motion.p>
-
-        {/* CTA Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.65 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 w-full sm:w-auto"
-        >
-          <a
-            href="#contact"
-            onClick={(e) => {
-              e.preventDefault();
-              document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
-            }}
-            className="glow-btn w-full sm:w-auto px-8 py-3.5 rounded-xl text-white font-semibold text-sm flex items-center justify-center gap-2"
+    <section id="home" className="relative min-h-[92vh] md:min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden">
+      <div className="section-container relative z-10">
+        <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
+          
+          {/* Authentic Real Status Chip */}
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full mb-6 border border-emerald-500/25 bg-emerald-500/10 text-emerald-300 shadow-sm"
           >
-            <HiMail size={18} />
-            Get In Touch
-          </a>
-          <a
-            href="/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="outline-btn w-full sm:w-auto px-8 py-3.5 rounded-xl font-semibold text-sm flex items-center justify-center gap-2"
-          >
-            <HiDownload size={18} />
-            Download Resume
-          </a>
-        </motion.div>
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            <span className="text-xs font-mono font-medium tracking-wide">
+              Available for Software Engineer Roles & Internships
+            </span>
+          </motion.div>
 
-        {/* Social links */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="flex items-center justify-center gap-3"
-        >
-          {[
-            { icon: <FaGithub size={18} />, href: 'https://github.com/dhanvanth', label: 'GitHub' },
-            { icon: <FaLinkedinIn size={18} />, href: 'https://linkedin.com/in/dhanvanth', label: 'LinkedIn' },
-          ].map((social) => (
+          {/* Genuine Human Name & Role */}
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight mb-4 text-white"
+          >
+            Dhanvanth <span className="gradient-text">Narla</span>
+          </motion.h1>
+
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-lg sm:text-2xl md:text-3xl font-semibold text-slate-200 mb-6 flex items-center justify-center gap-2"
+          >
+            <span className="text-emerald-400 font-mono text-sm sm:text-base mr-1">&lt;</span>
+            <span>Software Engineer & AI/ML Developer</span>
+            <span className="text-emerald-400 font-mono text-sm sm:text-base ml-1">/&gt;</span>
+          </motion.div>
+
+          {/* Authentic Developer Bio */}
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="max-w-2xl text-sm sm:text-base md:text-lg text-slate-300 leading-relaxed mb-8 font-normal"
+          >
+            Passionate about building scalable full-stack applications and engineering intelligent systems. 
+            Focused on robust software design, database optimization, and algorithmic problem solving.
+          </motion.p>
+
+          {/* Action Buttons */}
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="flex flex-wrap items-center justify-center gap-3.5 mb-10 w-full sm:w-auto"
+          >
             <a
-              key={social.label}
-              href={social.href}
+              href="#projects"
+              onClick={(e) => {
+                e.preventDefault();
+                document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="glow-btn px-6 py-3 rounded-xl text-white font-semibold text-sm flex items-center justify-center gap-2"
+            >
+              <FaCode size={15} />
+              Explore Projects
+            </a>
+
+            <a
+              href="#contact"
+              onClick={(e) => {
+                e.preventDefault();
+                document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="outline-btn px-6 py-3 rounded-xl font-semibold text-sm flex items-center justify-center gap-2"
+            >
+              <HiMail size={16} className="text-emerald-400" />
+              Contact Me
+            </a>
+
+            <a
+              href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label={social.label}
-              className="w-11 h-11 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 glass-card text-slate-300 hover:text-white hover:border-indigo-500/40"
+              className="outline-btn px-6 py-3 rounded-xl font-semibold text-sm flex items-center justify-center gap-2"
             >
-              {social.icon}
+              <HiDownload size={16} />
+              Resume
             </a>
-          ))}
-        </motion.div>
+          </motion.div>
 
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.2 }}
-          className="mt-14"
-        >
-          <a
-            href="#about"
-            onClick={(e) => {
-              e.preventDefault();
-              document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' });
-            }}
-            aria-label="Scroll to About section"
-            className="inline-block"
+          {/* Real Quick Snapshot Box */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="w-full max-w-3xl glass-card rounded-2xl p-4 sm:p-6 border border-white/5 shadow-xl"
           >
-            <motion.div
-              animate={{ y: [0, 8, 0] }}
-              transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-              className="w-5 h-9 rounded-full flex justify-center pt-1.5 border border-slate-700 bg-slate-900/50"
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-left">
+              <div className="p-2 sm:p-3 rounded-xl bg-white/[0.02] border border-white/5">
+                <div className="text-[11px] font-mono text-slate-400 uppercase tracking-wider mb-1">Domain</div>
+                <div className="text-xs sm:text-sm font-bold text-white">AI & Full-Stack</div>
+              </div>
+
+              <div className="p-2 sm:p-3 rounded-xl bg-white/[0.02] border border-white/5">
+                <div className="text-[11px] font-mono text-slate-400 uppercase tracking-wider mb-1">Academics</div>
+                <div className="text-xs sm:text-sm font-bold text-emerald-400">8.41 CGPA</div>
+              </div>
+
+              <div className="p-2 sm:p-3 rounded-xl bg-white/[0.02] border border-white/5">
+                <div className="text-[11px] font-mono text-slate-400 uppercase tracking-wider mb-1">Core Tech</div>
+                <div className="text-xs sm:text-sm font-bold text-white">Java • SQL • React</div>
+              </div>
+
+              <div className="p-2 sm:p-3 rounded-xl bg-white/[0.02] border border-white/5">
+                <div className="text-[11px] font-mono text-slate-400 uppercase tracking-wider mb-1">Location</div>
+                <div className="text-xs sm:text-sm font-bold text-white">Andhra Pradesh, IN</div>
+              </div>
+            </div>
+
+            {/* Quick Links inside Snapshot */}
+            <div className="flex flex-wrap items-center justify-between gap-3 mt-4 pt-3 border-t border-white/5 text-xs text-slate-400">
+              <span className="font-mono">Find me online:</span>
+              <div className="flex items-center gap-2">
+                <a
+                  href="https://github.com/dhanvanth"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-white/5 hover:bg-white/10 text-slate-200 hover:text-white transition-colors"
+                >
+                  <FaGithub size={13} />
+                  GitHub
+                </a>
+                <a
+                  href="https://linkedin.com/in/dhanvanth"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-white/5 hover:bg-white/10 text-slate-200 hover:text-white transition-colors"
+                >
+                  <FaLinkedinIn size={13} className="text-emerald-400" />
+                  LinkedIn
+                </a>
+                <a
+                  href="https://leetcode.com/dhanvanth"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-white/5 hover:bg-white/10 text-slate-200 hover:text-white transition-colors"
+                >
+                  <SiLeetcode size={13} className="text-amber-400" />
+                  LeetCode
+                </a>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Scroll Down Hint */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.9 }}
+            className="mt-12"
+          >
+            <a
+              href="#about"
+              onClick={(e) => {
+                e.preventDefault();
+                document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="inline-flex items-center gap-2 text-xs font-mono text-slate-400 hover:text-emerald-400 transition-colors"
             >
-              <motion.div
-                animate={{ opacity: [0.3, 1, 0.3], height: [4, 8, 4] }}
-                transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-                className="w-1 rounded-full bg-indigo-400"
-              />
-            </motion.div>
-          </a>
-        </motion.div>
+              <span>Scroll to learn more</span>
+              <HiArrowNarrowDown className="animate-bounce" />
+            </a>
+          </motion.div>
+
+        </div>
       </div>
     </section>
   );

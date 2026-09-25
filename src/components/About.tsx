@@ -8,7 +8,7 @@ const About = () => {
 
   const stats = [
     { value: '8.41', label: 'Academic CGPA', icon: <HiAcademicCap size={22} /> },
-    { value: 'AI & ML', label: 'Specialization', icon: <HiCode size={22} /> },
+    { value: 'AI & ML', label: 'Engineering Specialization', icon: <HiCode size={22} /> },
     { value: 'Andhra Pradesh', label: 'Based in India', icon: <HiLocationMarker size={22} /> },
   ];
 
@@ -21,8 +21,8 @@ const About = () => {
           transition={{ duration: 0.6 }}
         >
           <div className="flex items-center gap-2 mb-3">
-            <span className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse" />
-            <span className="text-xs font-mono tracking-widest text-indigo-400 uppercase">Get to know me</span>
+            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+            <span className="text-xs font-mono tracking-widest text-emerald-400 uppercase">Background & Focus</span>
           </div>
           <h2 className="section-heading">
             About <span className="gradient-text">Me</span>
@@ -40,29 +40,28 @@ const About = () => {
           >
             <div className="space-y-5">
               <p className="text-lg md:text-xl font-normal leading-relaxed text-slate-100">
-                I'm a <span className="text-white font-semibold underline decoration-indigo-500/50 decoration-2 underline-offset-4">B.Tech student</span> specializing
+                I'm a <span className="text-white font-semibold underline decoration-emerald-500/50 decoration-2 underline-offset-4">Computer Science student</span> specializing
                 in <span className="gradient-text font-semibold">Artificial Intelligence & Machine Learning</span> at{' '}
                 <span className="text-white font-semibold">Aditya College of Engineering and Technology</span>.
               </p>
 
               <p className="text-sm md:text-base leading-relaxed text-slate-300">
-                Motivated and detail-oriented with a robust foundation in software engineering, algorithmic problem solving,
-                and modern web development. Passionate about architecting scalable systems and building intelligent, AI-powered applications.
+                Motivated and detail-oriented with a solid grounding in software development, data structures, and full-stack web engineering. Passionate about designing robust architectures, clean APIs, and implementing intelligent machine learning models.
               </p>
 
               <p className="text-sm md:text-base leading-relaxed text-slate-300">
-                I actively practice competitive coding and participate in hackathons including the college innovation event{' '}
-                <span className="text-indigo-300 font-medium">Project Space</span>. Constantly seeking opportunities to contribute to dynamic engineering teams and build high-impact digital experiences.
+                I regularly practice algorithmic problem solving and participated in the college innovation program{' '}
+                <span className="text-emerald-300 font-medium">Project Space</span>. Looking forward to software engineering and AI internship opportunities to contribute and build impactful software.
               </p>
             </div>
 
-            {/* Quick info tags */}
-            <div className="pt-6 border-t border-slate-800/80 mt-6">
-              <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3 flex items-center gap-1.5">
-                <HiSparkles className="text-indigo-400" /> Core Focus Areas
+            {/* Core Focus tags */}
+            <div className="pt-6 border-t border-white/5 mt-6">
+              <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3 flex items-center gap-1.5 font-mono">
+                <HiSparkles className="text-emerald-400" /> Core Competencies
               </p>
               <div className="flex flex-wrap gap-2.5">
-                {['Artificial Intelligence', 'Machine Learning', 'Full-Stack Web Dev', 'Problem Solving', 'System Design'].map((tag) => (
+                {['Artificial Intelligence', 'Machine Learning', 'Full-Stack Web Dev', 'Algorithmic Problem Solving', 'Database Design'].map((tag) => (
                   <span key={tag} className="tech-tag">
                     {tag}
                   </span>
@@ -89,7 +88,7 @@ const About = () => {
                   className="glass-card rounded-xl p-5 flex items-center gap-4"
                 >
                   <div
-                    className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 text-indigo-400 bg-indigo-500/10 border border-indigo-500/20"
+                    className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 text-emerald-400 bg-emerald-500/10 border border-emerald-500/20"
                   >
                     {stat.icon}
                   </div>
@@ -108,11 +107,11 @@ const About = () => {
               initial={{ opacity: 0, y: 15 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.4, delay: 0.7 }}
-              className="glass-card rounded-xl p-6 border-indigo-500/20"
+              className="glass-card rounded-xl p-6 border-emerald-500/20"
             >
               <div className="flex items-center justify-between gap-2 mb-3">
                 <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+                  <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
                     <FaGraduationCap size={16} />
                   </div>
                   <span className="font-semibold text-white text-sm">Formal Education</span>
@@ -125,11 +124,11 @@ const About = () => {
               <h4 className="text-sm md:text-base font-semibold text-white leading-snug">
                 Aditya College of Engineering & Technology
               </h4>
-              <p className="text-xs text-indigo-300 font-medium mt-1">
+              <p className="text-xs text-emerald-300 font-medium mt-1">
                 B.Tech — Artificial Intelligence & Machine Learning
               </p>
-              <div className="flex items-center justify-between text-xs text-slate-400 mt-4 pt-3 border-t border-slate-800">
-                <span>Duration: 2024 – 2028</span>
+              <div className="flex items-center justify-between text-xs text-slate-400 mt-4 pt-3 border-t border-white/5">
+                <span className="font-mono">2024 – 2028</span>
                 <span className="font-semibold text-slate-200">CGPA: 8.41</span>
               </div>
             </motion.div>
