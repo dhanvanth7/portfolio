@@ -1,7 +1,7 @@
 import { useState, type FormEvent } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { HiMail, HiLocationMarker, HiPhone } from 'react-icons/hi';
+import { HiMail, HiLocationMarker, HiPhone, HiPaperAirplane } from 'react-icons/hi';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import { SiGmail } from 'react-icons/si';
 
@@ -12,7 +12,6 @@ const Contact = () => {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    // Placeholder — integrate with a backend or email service
     setSubmitted(true);
     setTimeout(() => setSubmitted(false), 4000);
     setFormData({ name: '', email: '', message: '' });
@@ -20,115 +19,120 @@ const Contact = () => {
 
   const contactInfo = [
     {
-      icon: <HiMail size={22} />,
-      label: 'Email',
+      icon: <HiMail size={20} />,
+      label: 'Email Address',
       value: 'dhanvanth.narla@gmail.com',
       href: 'mailto:dhanvanth.narla@gmail.com',
     },
     {
-      icon: <HiPhone size={22} />,
-      label: 'Phone',
+      icon: <HiPhone size={20} />,
+      label: 'Direct Phone',
       value: '+91 7989470172',
       href: 'tel:+917989470172',
     },
     {
-      icon: <HiLocationMarker size={22} />,
+      icon: <HiLocationMarker size={20} />,
       label: 'Location',
-      value: 'Anakapalli, Andhra Pradesh',
+      value: 'Anakapalli, Andhra Pradesh, India',
       href: null,
     },
   ];
 
   const socialLinks = [
-    { icon: <FaLinkedinIn size={20} />, href: 'https://linkedin.com/in/dhanvanth', label: 'LinkedIn', color: '#0A66C2' },
-    { icon: <FaGithub size={20} />, href: 'https://github.com/dhanvanth', label: 'GitHub', color: '#e5e7eb' },
-    { icon: <SiGmail size={20} />, href: 'mailto:dhanvanth.narla@gmail.com', label: 'Gmail', color: '#EA4335' },
+    { icon: <FaLinkedinIn size={18} />, href: 'https://linkedin.com/in/dhanvanth', label: 'LinkedIn', color: '#38bdf8' },
+    { icon: <FaGithub size={18} />, href: 'https://github.com/dhanvanth', label: 'GitHub', color: '#f1f5f9' },
+    { icon: <SiGmail size={18} />, href: 'mailto:dhanvanth.narla@gmail.com', label: 'Gmail', color: '#f87171' },
   ];
 
   return (
     <section id="contact" className="relative z-10">
       <div className="section-container" ref={ref}>
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.6 }}
         >
+          <div className="flex items-center gap-2 mb-3">
+            <span className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
+            <span className="text-xs font-mono tracking-widest text-cyan-400 uppercase">Reach out</span>
+          </div>
           <h2 className="section-heading">
             Get In <span className="gradient-text">Touch</span>
           </h2>
           <div className="section-divider" />
-          <p className="text-base mb-10 max-w-xl" style={{ color: 'var(--color-dark-300)' }}>
-            Have a project in mind or just want to chat? Feel free to reach out.
-            I'm always open to discussing new opportunities and ideas.
+          <p className="text-sm md:text-base mb-10 max-w-xl text-slate-300">
+            Have an opportunity, collaboration idea, or project you'd like to discuss? Feel free to reach out directly through the form or contact channels below.
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-5 gap-10 lg:gap-14">
+        <div className="grid lg:grid-cols-12 gap-8 items-start">
           {/* Contact form */}
           <motion.div
-            className="lg:col-span-3"
-            initial={{ opacity: 0, x: -40 }}
+            className="lg:col-span-7"
+            initial={{ opacity: 0, x: -30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.7, delay: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <form onSubmit={handleSubmit} className="glass-card rounded-2xl p-6 md:p-8 space-y-5">
+            <form onSubmit={handleSubmit} className="glass-card rounded-2xl p-6 md:p-8 space-y-5 border border-slate-700/60">
               <div className="grid sm:grid-cols-2 gap-5">
                 <div>
-                  <label htmlFor="contact-name" className="block text-sm font-medium text-white mb-2">
-                    Name
+                  <label htmlFor="contact-name" className="block text-xs font-semibold text-slate-200 uppercase tracking-wider mb-2">
+                    Your Name
                   </label>
                   <input
                     id="contact-name"
                     type="text"
                     required
-                    placeholder="Your name"
+                    placeholder="e.g. John Doe"
                     className="form-input"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   />
                 </div>
                 <div>
-                  <label htmlFor="contact-email" className="block text-sm font-medium text-white mb-2">
-                    Email
+                  <label htmlFor="contact-email" className="block text-xs font-semibold text-slate-200 uppercase tracking-wider mb-2">
+                    Email Address
                   </label>
                   <input
                     id="contact-email"
                     type="email"
                     required
-                    placeholder="your@email.com"
+                    placeholder="e.g. john@example.com"
                     className="form-input"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   />
                 </div>
               </div>
+
               <div>
-                <label htmlFor="contact-message" className="block text-sm font-medium text-white mb-2">
+                <label htmlFor="contact-message" className="block text-xs font-semibold text-slate-200 uppercase tracking-wider mb-2">
                   Message
                 </label>
                 <textarea
                   id="contact-message"
                   required
                   rows={5}
-                  placeholder="Tell me about your project or idea..."
+                  placeholder="Share details about your message, role, or project..."
                   className="form-input resize-none"
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 />
               </div>
+
               <button
                 type="submit"
-                className="glow-btn w-full py-3.5 rounded-xl text-white font-semibold text-sm flex items-center justify-center gap-2"
+                className="glow-btn w-full py-3.5 rounded-xl text-white font-semibold text-sm flex items-center justify-center gap-2 transition-transform active:scale-[0.99]"
               >
                 {submitted ? (
                   <>
-                    <span className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                    Message Sent!
+                    <span className="w-4 h-4 border-2 border-white/40 border-t-white rounded-full animate-spin" />
+                    <span>Message Sent Successfully!</span>
                   </>
                 ) : (
                   <>
-                    <HiMail size={18} />
-                    Send Message
+                    <HiPaperAirplane size={16} className="rotate-90 text-white" />
+                    <span>Send Message</span>
                   </>
                 )}
               </button>
@@ -137,34 +141,33 @@ const Contact = () => {
 
           {/* Contact info sidebar */}
           <motion.div
-            className="lg:col-span-2 space-y-6"
-            initial={{ opacity: 0, x: 40 }}
+            className="lg:col-span-5 space-y-4"
+            initial={{ opacity: 0, x: 30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.7, delay: 0.4 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
           >
             {/* Contact details */}
-            <div className="space-y-4">
+            <div className="space-y-3">
               {contactInfo.map((info) => (
-                <div key={info.label} className="glass-card rounded-xl p-5 flex items-center gap-4">
+                <div key={info.label} className="glass-card rounded-xl p-4 md:p-5 flex items-center gap-4 border border-slate-700/60">
                   <div
-                    className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0"
-                    style={{ background: 'rgba(99, 102, 241, 0.1)', color: 'var(--color-accent-start)' }}
+                    className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0 bg-indigo-500/10 text-indigo-400 border border-indigo-500/20"
                   >
                     {info.icon}
                   </div>
-                  <div>
-                    <p className="text-xs font-medium mb-0.5" style={{ color: 'var(--color-dark-300)' }}>
+                  <div className="min-w-0">
+                    <p className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-0.5">
                       {info.label}
                     </p>
                     {info.href ? (
                       <a
                         href={info.href}
-                        className="text-sm font-medium text-white hover:underline underline-offset-4 decoration-accent-start/40"
+                        className="text-sm font-semibold text-slate-100 hover:text-indigo-400 transition-colors truncate block"
                       >
                         {info.value}
                       </a>
                     ) : (
-                      <p className="text-sm font-medium text-white">{info.value}</p>
+                      <p className="text-sm font-semibold text-slate-100 truncate">{info.value}</p>
                     )}
                   </div>
                 </div>
@@ -172,8 +175,10 @@ const Contact = () => {
             </div>
 
             {/* Social links */}
-            <div className="glass-card rounded-xl p-5">
-              <p className="text-sm font-semibold text-white mb-4">Connect with me</p>
+            <div className="glass-card rounded-xl p-5 border border-slate-700/60">
+              <p className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-3.5">
+                Social Profiles & Direct
+              </p>
               <div className="flex items-center gap-3">
                 {socialLinks.map((social) => (
                   <a
@@ -182,16 +187,20 @@ const Contact = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={social.label}
-                    className="w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110"
+                    className="w-11 h-11 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110"
                     style={{
-                      background: `${social.color}12`,
+                      background: 'rgba(255, 255, 255, 0.05)',
                       color: social.color,
-                      border: `1px solid ${social.color}20`,
+                      border: '1px solid rgba(255, 255, 255, 0.1)',
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.boxShadow = `0 0 20px ${social.color}30`;
+                      e.currentTarget.style.borderColor = social.color;
+                      e.currentTarget.style.background = `${social.color}20`;
+                      e.currentTarget.style.boxShadow = `0 0 16px ${social.color}40`;
                     }}
                     onMouseLeave={(e) => {
+                      e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+                      e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)';
                       e.currentTarget.style.boxShadow = 'none';
                     }}
                   >

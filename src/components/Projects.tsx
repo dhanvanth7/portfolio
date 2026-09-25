@@ -1,10 +1,12 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { HiExternalLink } from 'react-icons/hi';
-import { FaGithub } from 'react-icons/fa';
+import { FaGithub, FaCheckCircle, FaProjectDiagram } from 'react-icons/fa';
 
 interface Project {
   title: string;
+  badge: string;
+  badgeColor: string;
   subtitle: string;
   description: string[];
   tech: string[];
@@ -17,13 +19,15 @@ interface Project {
 const projects: Project[] = [
   {
     title: 'AI Mentor',
-    subtitle: 'AI-Powered Interview Preparation Platform',
+    badge: 'Interview Prep Platform',
+    badgeColor: 'text-indigo-400 bg-indigo-500/10 border-indigo-500/20',
+    subtitle: 'Personalized AI-Powered Career Coaching & Technical Mock System',
     description: [
-      'Designed and developed a web-based platform to help students prepare for technical interviews.',
-      'Implemented personalized learning roadmaps based on users\' existing skills and target job roles.',
-      'Built modules for Skill Gap Analysis, Daily Learning Schedule, Mock Interview Planning, and Company-specific interview preparation.',
+      'Designed and engineered a full-stack platform to streamline technical interview preparation for engineering students.',
+      'Constructed automated personalized learning roadmaps adapting dynamically to user skill proficiencies and dream job targets.',
+      'Implemented dedicated modules for Skill Gap Analysis, Daily Practice Schedules, Mock Interview Simulation, and Company-Specific Prep.',
     ],
-    tech: ['HTML', 'CSS', 'Java', 'SQL', 'AI Tools'],
+    tech: ['HTML5', 'CSS3', 'Java', 'SQL', 'Prompt Engineering', 'AI APIs'],
     github: 'https://github.com/dhanvanth/ai-mentor',
     demo: '#',
     gradient: 'linear-gradient(135deg, #6366f1, #8b5cf6)',
@@ -31,13 +35,15 @@ const projects: Project[] = [
   },
   {
     title: 'BIS SmartAssist',
-    subtitle: 'Smart India Hackathon Project',
+    badge: 'Smart India Hackathon',
+    badgeColor: 'text-cyan-400 bg-cyan-500/10 border-cyan-500/20',
+    subtitle: 'Intelligent Standards Compliance & Verification Assistant',
     description: [
-      'An AI assistant layered over India\'s Bureau of Standards (BIS) services for seamless standards compliance.',
-      'Users describe a product in natural language — the system identifies relevant BIS standards, explains them simply, and builds a step-by-step compliance action plan.',
-      'Reviews uploaded documents for preliminary compliance checks, always citing sources. Multilingual support for English, Hindi, and Telugu.',
+      'Architected an intelligent assistant layered on the Bureau of Indian Standards (BIS) regulatory framework for seamless compliance checking.',
+      'Enables natural language product descriptions to automatically discover relevant BIS regulations, plain-language summaries, and step-by-step compliance workflows.',
+      'Includes document upload analysis for preliminary audits with strict source citations and multilingual support across English, Hindi, and Telugu.',
     ],
-    tech: ['React', 'TypeScript', 'Tailwind', 'Java 21', 'Spring Boot', 'LangChain4j', 'PostgreSQL', 'pgvector', 'Docker'],
+    tech: ['React', 'TypeScript', 'Tailwind CSS', 'Java 21', 'Spring Boot', 'LangChain4j', 'PostgreSQL', 'Docker'],
     github: 'https://github.com/dhanvanth/bis-smartassist',
     demo: '#',
     gradient: 'linear-gradient(135deg, #06b6d4, #3b82f6)',
@@ -52,10 +58,14 @@ const Projects = () => {
     <section id="projects" className="relative z-10">
       <div className="section-container" ref={ref}>
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.6 }}
         >
+          <div className="flex items-center gap-2 mb-3">
+            <span className="w-2 h-2 rounded-full bg-violet-500 animate-pulse" />
+            <span className="text-xs font-mono tracking-widest text-violet-400 uppercase">Portfolio Showcase</span>
+          </div>
           <h2 className="section-heading">
             Featured <span className="gradient-text">Projects</span>
           </h2>
@@ -66,12 +76,12 @@ const Projects = () => {
           {projects.map((project, i) => (
             <motion.div
               key={project.title}
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 35 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.7, delay: 0.2 + i * 0.2 }}
-              className="glass-card rounded-2xl overflow-hidden group"
+              transition={{ duration: 0.6, delay: 0.2 + i * 0.2 }}
+              className="glass-card rounded-2xl overflow-hidden group border border-slate-700/60"
             >
-              {/* Gradient header bar */}
+              {/* Gradient accent top bar */}
               <div
                 className="h-1.5 transition-all duration-500 group-hover:h-2"
                 style={{ background: project.gradient }}
@@ -79,77 +89,83 @@ const Projects = () => {
 
               <div className="p-6 md:p-8 lg:p-10">
                 <div className="flex flex-col lg:flex-row lg:items-start gap-6">
-                  {/* Icon */}
+                  {/* Project Emblem */}
                   <div
-                    className="w-16 h-16 rounded-2xl flex items-center justify-center text-3xl shrink-0 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3"
+                    className="w-16 h-16 rounded-2xl flex items-center justify-center text-3xl shrink-0 transition-transform duration-500 group-hover:scale-110 shadow-lg"
                     style={{
                       background: project.gradient,
-                      boxShadow: `0 8px 30px ${project.gradient.includes('#6366f1') ? 'rgba(99,102,241,0.3)' : 'rgba(6,182,212,0.3)'}`,
                     }}
                   >
                     {project.icon}
                   </div>
 
                   <div className="flex-1 min-w-0">
-                    {/* Title & subtitle */}
-                    <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mb-4">
-                      <h3 className="text-xl md:text-2xl font-bold text-white">{project.title}</h3>
-                      <span
-                        className="text-xs font-medium px-3 py-1 rounded-full w-fit"
-                        style={{
-                          background: 'rgba(99, 102, 241, 0.1)',
-                          color: 'var(--color-accent-start)',
-                          border: '1px solid rgba(99, 102, 241, 0.2)',
-                        }}
-                      >
-                        {project.subtitle}
-                      </span>
-                    </div>
-
-                    {/* Description */}
-                    <ul className="space-y-2 mb-6">
-                      {project.description.map((point, idx) => (
-                        <li
-                          key={idx}
-                          className="text-sm leading-relaxed flex items-start gap-3"
-                          style={{ color: 'var(--color-dark-200)' }}
+                    {/* Header Row: Title & Badge */}
+                    <div className="flex flex-wrap items-center justify-between gap-3 mb-2">
+                      <div className="flex items-center gap-3">
+                        <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight">
+                          {project.title}
+                        </h3>
+                        <span
+                          className={`text-xs font-semibold px-3 py-1 rounded-full border ${project.badgeColor}`}
                         >
-                          <span
-                            className="w-1.5 h-1.5 rounded-full mt-2 shrink-0"
-                            style={{ background: 'var(--color-accent-start)' }}
-                          />
-                          {point}
-                        </li>
-                      ))}
-                    </ul>
+                          {project.badge}
+                        </span>
+                      </div>
+                    </div>
 
-                    {/* Tech stack */}
-                    <div className="flex flex-wrap gap-2 mb-6">
-                      {project.tech.map((t) => (
-                        <span key={t} className="tech-tag">{t}</span>
+                    <p className="text-sm font-medium text-slate-300 mb-5">
+                      {project.subtitle}
+                    </p>
+
+                    {/* Bullet descriptions */}
+                    <div className="space-y-2.5 mb-6">
+                      {project.description.map((point, idx) => (
+                        <div
+                          key={idx}
+                          className="text-xs md:text-sm leading-relaxed text-slate-300 flex items-start gap-3"
+                        >
+                          <FaCheckCircle
+                            size={14}
+                            className="mt-1 shrink-0 text-indigo-400"
+                          />
+                          <span>{point}</span>
+                        </div>
                       ))}
                     </div>
 
-                    {/* Links */}
-                    <div className="flex items-center gap-4">
+                    {/* Tech Stack Pills */}
+                    <div className="pt-4 border-t border-slate-800 mb-6">
+                      <p className="text-xs font-mono uppercase tracking-wider text-slate-400 mb-2.5 flex items-center gap-1.5">
+                        <FaProjectDiagram size={12} className="text-indigo-400" /> Technologies & Tools
+                      </p>
+                      <div className="flex flex-wrap gap-2">
+                        {project.tech.map((t) => (
+                          <span key={t} className="tech-tag">
+                            {t}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Action Links */}
+                    <div className="flex flex-wrap items-center gap-4">
                       <a
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-sm font-medium transition-colors duration-300 hover:text-white"
-                        style={{ color: 'var(--color-dark-200)' }}
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs md:text-sm font-medium text-slate-200 bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 transition-all duration-200 hover:text-white hover:border-slate-500"
                       >
-                        <FaGithub size={18} />
+                        <FaGithub size={16} />
                         Source Code
                       </a>
                       <a
                         href={project.demo}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-sm font-medium transition-colors duration-300"
-                        style={{ color: 'var(--color-accent-start)' }}
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs md:text-sm font-medium text-white bg-indigo-600/30 hover:bg-indigo-600/50 border border-indigo-500/40 transition-all duration-200"
                       >
-                        <HiExternalLink size={18} />
+                        <HiExternalLink size={16} className="text-indigo-300" />
                         Live Demo
                       </a>
                     </div>
