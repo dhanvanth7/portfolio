@@ -55,7 +55,7 @@ const Projects = () => {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <section id="projects" className="relative z-10 py-8 md:py-12">
+    <section id="projects" className="relative z-10 py-10 md:py-16">
       <div className="section-container" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -79,7 +79,7 @@ const Projects = () => {
               initial={{ opacity: 0, y: 35 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 + i * 0.2 }}
-              className="glass-card rounded-3xl overflow-hidden group border border-white/10"
+              className="glass-card rounded-3xl overflow-hidden group border border-white/10 text-left"
             >
               {/* Gradient accent top bar */}
               <div
@@ -87,8 +87,8 @@ const Projects = () => {
                 style={{ background: project.gradient }}
               />
 
-              <div className="p-10 md:p-14 lg:p-16">
-                <div className="flex flex-col lg:flex-row lg:items-start gap-9">
+              <div className="p-8 sm:p-10 md:p-14 lg:p-16">
+                <div className="flex flex-col lg:flex-row lg:items-start gap-8 sm:gap-10">
                   {/* Project Emblem */}
                   <div
                     className="w-20 h-20 rounded-2xl flex items-center justify-center text-4xl shrink-0 transition-transform duration-300 group-hover:scale-105 shadow-xl"
@@ -104,19 +104,19 @@ const Projects = () => {
                   <div className="flex-1 min-w-0">
                     {/* Header Row: Title & Badge */}
                     <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
-                      <div className="flex flex-wrap items-center gap-4">
-                        <h3 className="text-2xl md:text-3xl font-extrabold text-white tracking-tight">
+                      <div className="flex flex-wrap items-center gap-3.5 sm:gap-4">
+                        <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight break-words">
                           {project.title}
                         </h3>
                         <span
-                          className={`text-xs md:text-sm font-semibold px-4 py-1.5 rounded-full border ${project.badgeColor}`}
+                          className={`text-xs md:text-sm font-semibold px-4 py-1.5 rounded-full border shrink-0 ${project.badgeColor}`}
                         >
                           {project.badge}
                         </span>
                       </div>
                     </div>
 
-                    <p className="text-base md:text-lg font-medium text-slate-300 mb-7">
+                    <p className="text-base sm:text-lg font-medium text-slate-300 mb-7 break-words">
                       {project.subtitle}
                     </p>
 
@@ -125,13 +125,13 @@ const Projects = () => {
                       {project.description.map((point, idx) => (
                         <div
                           key={idx}
-                          className="text-sm md:text-base leading-relaxed text-slate-300 flex items-start gap-4"
+                          className="text-sm sm:text-base leading-relaxed text-slate-300 flex items-start gap-4"
                         >
                           <FaCheckCircle
                             size={17}
                             className="mt-1 shrink-0 text-emerald-400"
                           />
-                          <span>{point}</span>
+                          <span className="break-words">{point}</span>
                         </div>
                       ))}
                     </div>

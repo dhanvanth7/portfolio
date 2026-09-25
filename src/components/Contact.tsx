@@ -45,7 +45,7 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="relative z-10 py-8 md:py-12">
+    <section id="contact" className="relative z-10 py-10 md:py-16">
       <div className="section-container" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -60,7 +60,7 @@ const Contact = () => {
             Get In <span className="gradient-text">Touch</span>
           </h2>
           <div className="section-divider" />
-          <p className="text-base md:text-lg mb-12 max-w-2xl text-slate-300 leading-relaxed">
+          <p className="text-base md:text-lg mb-12 max-w-2xl text-slate-300 leading-relaxed text-left">
             Have an opportunity, internship role, or project you'd like to collaborate on? Feel free to reach out directly through the form or my personal channels below.
           </p>
         </motion.div>
@@ -73,7 +73,7 @@ const Contact = () => {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <form onSubmit={handleSubmit} className="glass-card rounded-3xl p-10 md:p-12 lg:p-14 space-y-7 md:space-y-8 border border-white/10">
+            <form onSubmit={handleSubmit} className="glass-card rounded-3xl p-8 sm:p-10 md:p-12 lg:p-14 space-y-7 md:space-y-8 border border-white/10 overflow-hidden text-left">
               <div className="grid sm:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="contact-name" className="block text-xs md:text-sm font-semibold text-slate-200 uppercase tracking-wider mb-3 font-mono">
@@ -150,26 +150,26 @@ const Contact = () => {
             {/* Contact details */}
             <div className="space-y-5">
               {contactInfo.map((info) => (
-                <div key={info.label} className="glass-card rounded-2xl p-7 flex items-center gap-6 border border-white/10">
+                <div key={info.label} className="glass-card rounded-2xl p-6 sm:p-7 flex items-center gap-5 sm:gap-6 border border-white/10 overflow-hidden text-left">
                   <div
                     className="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
                     style={{ width: '3.5rem', height: '3.5rem' }}
                   >
                     {info.icon}
                   </div>
-                  <div className="min-w-0">
+                  <div className="min-w-0 flex-1">
                     <p className="text-xs md:text-sm font-semibold uppercase tracking-wider text-slate-400 mb-1.5 font-mono">
                       {info.label}
                     </p>
                     {info.href ? (
                       <a
                         href={info.href}
-                        className="text-base md:text-lg font-bold text-slate-100 hover:text-emerald-400 transition-colors truncate block"
+                        className="text-base md:text-lg font-bold text-slate-100 hover:text-emerald-400 transition-colors break-words block"
                       >
                         {info.value}
                       </a>
                     ) : (
-                      <p className="text-base md:text-lg font-bold text-slate-100 truncate">{info.value}</p>
+                      <p className="text-base md:text-lg font-bold text-slate-100 break-words">{info.value}</p>
                     )}
                   </div>
                 </div>
@@ -177,7 +177,7 @@ const Contact = () => {
             </div>
 
             {/* Social links box */}
-            <div className="glass-card rounded-2xl p-7 border border-white/10">
+            <div className="glass-card rounded-2xl p-6 sm:p-7 border border-white/10 overflow-hidden text-left">
               <p className="text-xs md:text-sm font-semibold uppercase tracking-wider text-slate-400 mb-4 font-mono">
                 Social & Developer Profiles
               </p>
@@ -189,7 +189,7 @@ const Contact = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={social.label}
-                    className="w-13 h-13 rounded-2xl flex items-center justify-center transition-transform duration-200 hover:scale-105"
+                    className="w-13 h-13 rounded-2xl flex items-center justify-center transition-transform duration-200 hover:scale-105 shrink-0"
                     style={{
                       width: '3.25rem',
                       height: '3.25rem',

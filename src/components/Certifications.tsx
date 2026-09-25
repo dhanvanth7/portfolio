@@ -54,7 +54,7 @@ const Certifications = () => {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.15 });
 
   return (
-    <section id="certifications" className="relative z-10 py-8 md:py-12">
+    <section id="certifications" className="relative z-10 py-10 md:py-16">
       <div className="section-container" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -71,16 +71,16 @@ const Certifications = () => {
           <div className="section-divider" />
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-7 md:gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 md:gap-8">
           {certifications.map((cert, i) => (
             <motion.div
               key={cert.name}
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.4, delay: 0.1 + i * 0.08 }}
-              className="glass-card rounded-3xl p-7 md:p-8 flex items-center justify-between gap-5 group"
+              className="glass-card rounded-3xl p-6 sm:p-7 md:p-8 flex items-center justify-between gap-5 group overflow-hidden text-left"
             >
-              <div className="flex items-center gap-4 min-w-0">
+              <div className="flex items-center gap-4 min-w-0 flex-1">
                 <div
                   className="w-13 h-13 rounded-2xl flex items-center justify-center shrink-0 transition-transform duration-200"
                   style={{
@@ -93,11 +93,11 @@ const Certifications = () => {
                 >
                   {cert.icon}
                 </div>
-                <div className="min-w-0">
-                  <h3 className="text-base font-bold text-white truncate leading-snug">
+                <div className="min-w-0 flex-1">
+                  <h3 className="text-base font-bold text-white leading-snug break-words">
                     {cert.name}
                   </h3>
-                  <p className="text-xs md:text-sm text-slate-400 mt-1 truncate font-medium">
+                  <p className="text-xs sm:text-sm text-slate-400 mt-1 font-medium break-words">
                     {cert.issuer}
                   </p>
                 </div>

@@ -51,7 +51,7 @@ const CodingProfiles = () => {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.15 });
 
   return (
-    <section id="profiles" className="relative z-10 py-8 md:py-12">
+    <section id="profiles" className="relative z-10 py-10 md:py-16">
       <div className="section-container" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -68,7 +68,7 @@ const CodingProfiles = () => {
           <div className="section-divider" />
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7 md:gap-8">
           {profiles.map((profile, i) => (
             <motion.a
               key={profile.name}
@@ -78,7 +78,7 @@ const CodingProfiles = () => {
               initial={{ opacity: 0, y: 25 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.4, delay: 0.15 + i * 0.1 }}
-              className="glass-card rounded-3xl p-9 md:p-11 flex flex-col items-center justify-between text-center group border border-white/10"
+              className="glass-card rounded-3xl p-8 sm:p-9 md:p-11 flex flex-col items-center justify-between text-center group border border-white/10 overflow-hidden"
             >
               <div className="flex flex-col items-center w-full">
                 {/* Brand icon container with ample breathing room */}
@@ -95,17 +95,17 @@ const CodingProfiles = () => {
                   {profile.icon}
                 </div>
 
-                <h3 className="font-extrabold text-white text-lg md:text-xl mb-2 group-hover:text-emerald-300 transition-colors">
+                <h3 className="font-extrabold text-white text-lg md:text-xl mb-2 group-hover:text-emerald-300 transition-colors break-words">
                   {profile.name}
                 </h3>
-                <p className="text-xs md:text-sm font-mono text-slate-400 mb-6">
+                <p className="text-xs md:text-sm font-mono text-slate-400 mb-6 break-words">
                   @{profile.username}
                 </p>
               </div>
 
               <div className="w-full pt-5 border-t border-white/10 flex flex-col items-center gap-4">
                 <span
-                  className="text-xs md:text-sm font-semibold px-4 py-2 rounded-full w-full truncate"
+                  className="text-xs md:text-sm font-semibold px-4 py-2 rounded-full w-full break-words"
                   style={{
                     background: `${profile.color}12`,
                     color: profile.color,

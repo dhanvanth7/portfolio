@@ -72,7 +72,7 @@ const Skills = () => {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <section id="skills" className="relative z-10 py-8 md:py-12">
+    <section id="skills" className="relative z-10 py-10 md:py-16">
       <div className="section-container" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -89,7 +89,7 @@ const Skills = () => {
           <div className="section-divider" />
         </motion.div>
 
-        {/* 4 Categories Grid with Extra-Spacious Padding */}
+        {/* 4 Categories Grid */}
         <div className="grid md:grid-cols-2 gap-8 lg:gap-10">
           {skillCategories.map((category, catIdx) => (
             <motion.div
@@ -97,19 +97,19 @@ const Skills = () => {
               initial={{ opacity: 0, y: 25 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.15 + catIdx * 0.1 }}
-              className="glass-card rounded-3xl p-9 md:p-12 lg:p-14 flex flex-col justify-between"
+              className="glass-card rounded-3xl p-8 sm:p-10 md:p-12 lg:p-14 flex flex-col justify-between overflow-hidden text-left"
             >
               <div>
-                <div className="flex items-center justify-between pb-6 mb-8 border-b border-white/10">
+                <div className="flex flex-wrap items-center justify-between gap-3 pb-6 mb-8 border-b border-white/10">
                   <div className="flex items-center gap-4">
                     <div className="w-11 h-11 rounded-2xl flex items-center justify-center bg-white/5 border border-white/10 shrink-0">
                       {category.categoryIcon}
                     </div>
-                    <h3 className="text-lg md:text-xl font-bold text-white">
+                    <h3 className="text-lg sm:text-xl font-bold text-white break-words">
                       {category.title}
                     </h3>
                   </div>
-                  <span className="text-xs font-mono text-slate-400 px-3.5 py-1.5 rounded-full bg-slate-900/80 border border-white/10">
+                  <span className="text-xs font-mono text-slate-400 px-3.5 py-1.5 rounded-full bg-slate-900/80 border border-white/10 shrink-0">
                     {category.skills.length} skills
                   </span>
                 </div>
@@ -122,8 +122,8 @@ const Skills = () => {
                       animate={inView ? { opacity: 1, x: 0 } : {}}
                       transition={{ duration: 0.4, delay: 0.3 + catIdx * 0.1 + skillIdx * 0.08 }}
                     >
-                      <div className="flex items-center justify-between mb-3">
-                        <div className="flex items-center gap-4">
+                      <div className="flex items-center justify-between gap-3 mb-3">
+                        <div className="flex items-center gap-4 min-w-0">
                           <div
                             className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0"
                             style={{
@@ -134,9 +134,9 @@ const Skills = () => {
                           >
                             {skill.icon}
                           </div>
-                          <span className="font-semibold text-slate-100 text-base">{skill.name}</span>
+                          <span className="font-semibold text-slate-100 text-sm sm:text-base truncate">{skill.name}</span>
                         </div>
-                        <span className="text-xs md:text-sm font-mono font-semibold text-slate-300">
+                        <span className="text-xs md:text-sm font-mono font-semibold text-slate-300 shrink-0">
                           {skill.level}%
                         </span>
                       </div>
@@ -167,13 +167,13 @@ const Skills = () => {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="mt-10"
         >
-          <div className="glass-card rounded-3xl p-9 md:p-12 lg:p-14">
+          <div className="glass-card rounded-3xl p-8 sm:p-10 md:p-12 lg:p-14 overflow-hidden text-left">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-6 border-b border-white/10">
               <div className="flex items-center gap-4">
                 <div className="w-11 h-11 rounded-2xl flex items-center justify-center bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 shrink-0">
                   <HiSparkles size={20} />
                 </div>
-                <h3 className="text-lg md:text-xl font-bold text-white">
+                <h3 className="text-lg sm:text-xl font-bold text-white">
                   Professional & Soft Skills
                 </h3>
               </div>
@@ -189,7 +189,7 @@ const Skills = () => {
                   className="flex items-center gap-3 px-6 py-4 rounded-2xl text-sm font-medium transition-all duration-200 hover:border-emerald-500/40 cursor-default bg-slate-900/70 border border-white/10 text-slate-200"
                 >
                   <span className="shrink-0">{item.icon}</span>
-                  <span>{item.name}</span>
+                  <span className="break-words">{item.name}</span>
                 </div>
               ))}
             </div>
