@@ -15,7 +15,7 @@ interface Profile {
 const profiles: Profile[] = [
   {
     name: 'LeetCode',
-    icon: <SiLeetcode size={32} />,
+    icon: <SiLeetcode size={26} />,
     url: 'https://leetcode.com/dhanvanth',
     color: '#fbbf24',
     username: 'dhanvanth',
@@ -23,7 +23,7 @@ const profiles: Profile[] = [
   },
   {
     name: 'CodeChef',
-    icon: <SiCodechef size={32} />,
+    icon: <SiCodechef size={26} />,
     url: 'https://codechef.com/users/dhanvanth',
     color: '#34d399',
     username: 'dhanvanth',
@@ -31,7 +31,7 @@ const profiles: Profile[] = [
   },
   {
     name: 'HackerRank',
-    icon: <SiHackerrank size={32} />,
+    icon: <SiHackerrank size={26} />,
     url: 'https://hackerrank.com/dhanvanth',
     color: '#10b981',
     username: 'dhanvanth',
@@ -39,7 +39,7 @@ const profiles: Profile[] = [
   },
   {
     name: 'GeeksforGeeks',
-    icon: <SiGeeksforgeeks size={32} />,
+    icon: <SiGeeksforgeeks size={26} />,
     url: 'https://geeksforgeeks.org/user/dhanvanth',
     color: '#4ade80',
     username: 'dhanvanth',
@@ -78,14 +78,14 @@ const CodingProfiles = () => {
               initial={{ opacity: 0, y: 25 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.4, delay: 0.15 + i * 0.1 }}
-              className="glass-card rounded-2xl p-6 flex flex-col items-center justify-between text-center group border border-white/5"
+              className="glass-card rounded-2xl p-6 md:p-7 flex flex-col items-center justify-between text-center group border border-white/5"
             >
               <div className="flex flex-col items-center w-full">
-                {/* Brand icon */}
+                {/* Brand icon container with ample breathing room */}
                 <div
-                  className="w-16 h-16 rounded-2xl flex items-center justify-center mb-4 transition-all duration-300 group-hover:scale-110 shadow-md"
+                  className="w-16 h-16 rounded-2xl flex items-center justify-center mb-4 transition-transform duration-200 group-hover:scale-105 shadow-md"
                   style={{
-                    background: `${profile.color}18`,
+                    background: `${profile.color}15`,
                     color: profile.color,
                     border: `1px solid ${profile.color}35`,
                   }}
@@ -96,12 +96,12 @@ const CodingProfiles = () => {
                 <h3 className="font-bold text-white text-base md:text-lg mb-1 group-hover:text-emerald-300 transition-colors">
                   {profile.name}
                 </h3>
-                <p className="text-xs font-mono text-slate-400 mb-4">
+                <p className="text-xs font-mono text-slate-400 mb-5">
                   @{profile.username}
                 </p>
               </div>
 
-              <div className="w-full pt-3 border-t border-white/5 flex flex-col items-center gap-3">
+              <div className="w-full pt-3.5 border-t border-white/5 flex flex-col items-center gap-3">
                 <span
                   className="text-xs font-semibold px-3 py-1 rounded-full w-full truncate"
                   style={{
@@ -113,7 +113,7 @@ const CodingProfiles = () => {
                   {profile.stat}
                 </span>
 
-                <span className="inline-flex items-center gap-1 text-xs font-medium text-slate-400 group-hover:text-white transition-colors">
+                <span className="inline-flex items-center gap-1.5 text-xs font-medium text-slate-400 group-hover:text-white transition-colors">
                   View Profile <HiArrowNarrowRight className="transition-transform group-hover:translate-x-1 text-emerald-400" />
                 </span>
               </div>

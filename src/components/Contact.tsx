@@ -19,19 +19,19 @@ const Contact = () => {
 
   const contactInfo = [
     {
-      icon: <HiMail size={20} />,
+      icon: <HiMail size={18} />,
       label: 'Email Address',
       value: 'dhanvanth.narla@gmail.com',
       href: 'mailto:dhanvanth.narla@gmail.com',
     },
     {
-      icon: <HiPhone size={20} />,
+      icon: <HiPhone size={18} />,
       label: 'Direct Phone',
       value: '+91 7989470172',
       href: 'tel:+917989470172',
     },
     {
-      icon: <HiLocationMarker size={20} />,
+      icon: <HiLocationMarker size={18} />,
       label: 'Location',
       value: 'Anakapalli, Andhra Pradesh, India',
       href: null,
@@ -39,9 +39,9 @@ const Contact = () => {
   ];
 
   const socialLinks = [
-    { icon: <FaLinkedinIn size={18} />, href: 'https://linkedin.com/in/dhanvanth', label: 'LinkedIn', color: '#38bdf8' },
-    { icon: <FaGithub size={18} />, href: 'https://github.com/dhanvanth', label: 'GitHub', color: '#f1f5f9' },
-    { icon: <SiGmail size={18} />, href: 'mailto:dhanvanth.narla@gmail.com', label: 'Gmail', color: '#f87171' },
+    { icon: <FaLinkedinIn size={16} />, href: 'https://linkedin.com/in/dhanvanth', label: 'LinkedIn', color: '#38bdf8' },
+    { icon: <FaGithub size={16} />, href: 'https://github.com/dhanvanth', label: 'GitHub', color: '#f1f5f9' },
+    { icon: <SiGmail size={16} />, href: 'mailto:dhanvanth.narla@gmail.com', label: 'Gmail', color: '#f87171' },
   ];
 
   return (
@@ -131,7 +131,7 @@ const Contact = () => {
                   </>
                 ) : (
                   <>
-                    <HiPaperAirplane size={16} className="rotate-90 text-white" />
+                    <HiPaperAirplane size={15} className="rotate-90 text-white" />
                     <span>Send Message</span>
                   </>
                 )}
@@ -187,7 +187,7 @@ const Contact = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={social.label}
-                    className="w-11 h-11 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110"
+                    className="w-11 h-11 rounded-xl flex items-center justify-center transition-transform duration-200 hover:scale-105"
                     style={{
                       background: 'rgba(255, 255, 255, 0.04)',
                       color: social.color,

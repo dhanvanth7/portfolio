@@ -7,9 +7,9 @@ const About = () => {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.15 });
 
   const stats = [
-    { value: '8.41', label: 'Academic CGPA', icon: <HiAcademicCap size={22} /> },
-    { value: 'AI & ML', label: 'Engineering Specialization', icon: <HiCode size={22} /> },
-    { value: 'Andhra Pradesh', label: 'Based in India', icon: <HiLocationMarker size={22} /> },
+    { value: '8.41', label: 'Academic CGPA', icon: <HiAcademicCap size={18} /> },
+    { value: 'AI & ML', label: 'Engineering Specialization', icon: <HiCode size={18} /> },
+    { value: 'Andhra Pradesh', label: 'Based in India', icon: <HiLocationMarker size={18} /> },
   ];
 
   return (
@@ -58,7 +58,7 @@ const About = () => {
             {/* Core Focus tags */}
             <div className="pt-6 border-t border-white/5 mt-6">
               <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3 flex items-center gap-1.5 font-mono">
-                <HiSparkles className="text-emerald-400" /> Core Competencies
+                <HiSparkles className="text-emerald-400" size={14} /> Core Competencies
               </p>
               <div className="flex flex-wrap gap-2.5">
                 {['Artificial Intelligence', 'Machine Learning', 'Full-Stack Web Dev', 'Algorithmic Problem Solving', 'Database Design'].map((tag) => (
@@ -88,7 +88,7 @@ const About = () => {
                   className="glass-card rounded-xl p-5 flex items-center gap-4"
                 >
                   <div
-                    className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 text-emerald-400 bg-emerald-500/10 border border-emerald-500/20"
+                    className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0 text-emerald-400 bg-emerald-500/10 border border-emerald-500/20"
                   >
                     {stat.icon}
                   </div>
@@ -111,8 +111,8 @@ const About = () => {
             >
               <div className="flex items-center justify-between gap-2 mb-3">
                 <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                    <FaGraduationCap size={16} />
+                  <div className="w-9 h-9 rounded-lg flex items-center justify-center bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 shrink-0">
+                    <FaGraduationCap size={15} />
                   </div>
                   <span className="font-semibold text-white text-sm">Formal Education</span>
                 </div>
