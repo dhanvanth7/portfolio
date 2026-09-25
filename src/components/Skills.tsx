@@ -72,7 +72,7 @@ const Skills = () => {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <section id="skills" className="relative z-10 py-6 md:py-10">
+    <section id="skills" className="relative z-10 py-8 md:py-12">
       <div className="section-container" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -89,7 +89,7 @@ const Skills = () => {
           <div className="section-divider" />
         </motion.div>
 
-        {/* 4 Categories Grid with Spacious Padding */}
+        {/* 4 Categories Grid with Extra-Spacious Padding */}
         <div className="grid md:grid-cols-2 gap-8 lg:gap-10">
           {skillCategories.map((category, catIdx) => (
             <motion.div
@@ -97,12 +97,12 @@ const Skills = () => {
               initial={{ opacity: 0, y: 25 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.15 + catIdx * 0.1 }}
-              className="glass-card rounded-3xl p-8 md:p-10 lg:p-11 flex flex-col justify-between"
+              className="glass-card rounded-3xl p-9 md:p-12 lg:p-14 flex flex-col justify-between"
             >
               <div>
-                <div className="flex items-center justify-between pb-5 mb-8 border-b border-white/10">
+                <div className="flex items-center justify-between pb-6 mb-8 border-b border-white/10">
                   <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-white/5 border border-white/10 shrink-0">
+                    <div className="w-11 h-11 rounded-2xl flex items-center justify-center bg-white/5 border border-white/10 shrink-0">
                       {category.categoryIcon}
                     </div>
                     <h3 className="text-lg md:text-xl font-bold text-white">
@@ -114,7 +114,7 @@ const Skills = () => {
                   </span>
                 </div>
 
-                <div className="space-y-7">
+                <div className="space-y-8">
                   {category.skills.map((skill, skillIdx) => (
                     <motion.div
                       key={skill.name}
@@ -140,7 +140,7 @@ const Skills = () => {
                           {skill.level}%
                         </span>
                       </div>
-                      <div className="skill-bar-bg h-2 rounded-full">
+                      <div className="skill-bar-bg h-2.5 rounded-full">
                         <motion.div
                           className="skill-bar-fill rounded-full"
                           initial={{ width: 0 }}
@@ -167,11 +167,11 @@ const Skills = () => {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="mt-10"
         >
-          <div className="glass-card rounded-3xl p-8 md:p-10 lg:p-11">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-7 pb-5 border-b border-white/10">
+          <div className="glass-card rounded-3xl p-9 md:p-12 lg:p-14">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-6 border-b border-white/10">
               <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 shrink-0">
-                  <HiSparkles size={18} />
+                <div className="w-11 h-11 rounded-2xl flex items-center justify-center bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 shrink-0">
+                  <HiSparkles size={20} />
                 </div>
                 <h3 className="text-lg md:text-xl font-bold text-white">
                   Professional & Soft Skills
@@ -186,7 +186,7 @@ const Skills = () => {
               {softSkills.map((item) => (
                 <div
                   key={item.name}
-                  className="flex items-center gap-3 px-5 py-3.5 rounded-2xl text-sm font-medium transition-all duration-200 hover:border-emerald-500/40 cursor-default bg-slate-900/70 border border-white/10 text-slate-200"
+                  className="flex items-center gap-3 px-6 py-4 rounded-2xl text-sm font-medium transition-all duration-200 hover:border-emerald-500/40 cursor-default bg-slate-900/70 border border-white/10 text-slate-200"
                 >
                   <span className="shrink-0">{item.icon}</span>
                   <span>{item.name}</span>

@@ -96,64 +96,64 @@ const Hero = () => {
             </a>
           </motion.div>
 
-          {/* Spacious Developer Snapshot Box */}
+          {/* Extra-Spacious Developer Snapshot Box */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="w-full max-w-4xl glass-card rounded-3xl p-6 sm:p-8 md:p-9 border border-white/10 shadow-2xl"
+            className="w-full max-w-4xl glass-card rounded-3xl p-8 sm:p-10 md:p-12 border border-white/10 shadow-2xl"
           >
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-6 text-left">
-              <div className="p-4 sm:p-5 rounded-2xl bg-white/[0.03] border border-white/10">
-                <div className="text-xs font-mono text-slate-400 uppercase tracking-wider mb-1.5">Domain</div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-7 text-left">
+              <div className="p-5 sm:p-6 rounded-2xl bg-white/[0.03] border border-white/10">
+                <div className="text-xs font-mono text-slate-400 uppercase tracking-wider mb-2">Domain</div>
                 <div className="text-sm sm:text-base font-bold text-white">AI & Full-Stack</div>
               </div>
 
-              <div className="p-4 sm:p-5 rounded-2xl bg-white/[0.03] border border-white/10">
-                <div className="text-xs font-mono text-slate-400 uppercase tracking-wider mb-1.5">Academics</div>
+              <div className="p-5 sm:p-6 rounded-2xl bg-white/[0.03] border border-white/10">
+                <div className="text-xs font-mono text-slate-400 uppercase tracking-wider mb-2">Academics</div>
                 <div className="text-sm sm:text-base font-bold text-emerald-400">8.41 CGPA</div>
               </div>
 
-              <div className="p-4 sm:p-5 rounded-2xl bg-white/[0.03] border border-white/10">
-                <div className="text-xs font-mono text-slate-400 uppercase tracking-wider mb-1.5">Core Tech</div>
+              <div className="p-5 sm:p-6 rounded-2xl bg-white/[0.03] border border-white/10">
+                <div className="text-xs font-mono text-slate-400 uppercase tracking-wider mb-2">Core Tech</div>
                 <div className="text-sm sm:text-base font-bold text-white">Java • SQL • React</div>
               </div>
 
-              <div className="p-4 sm:p-5 rounded-2xl bg-white/[0.03] border border-white/10">
-                <div className="text-xs font-mono text-slate-400 uppercase tracking-wider mb-1.5">Location</div>
+              <div className="p-5 sm:p-6 rounded-2xl bg-white/[0.03] border border-white/10">
+                <div className="text-xs font-mono text-slate-400 uppercase tracking-wider mb-2">Location</div>
                 <div className="text-sm sm:text-base font-bold text-white">Andhra Pradesh, IN</div>
               </div>
             </div>
 
             {/* Quick Links inside Snapshot */}
-            <div className="flex flex-wrap items-center justify-between gap-4 mt-6 pt-5 border-t border-white/10 text-xs sm:text-sm text-slate-400">
+            <div className="flex flex-wrap items-center justify-between gap-4 mt-8 pt-6 border-t border-white/10 text-xs sm:text-sm text-slate-400">
               <span className="font-mono text-slate-400">Direct profiles:</span>
-              <div className="flex flex-wrap items-center gap-3">
+              <div className="flex flex-wrap items-center gap-3.5">
                 <a
                   href="https://github.com/dhanvanth"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-200 hover:text-white transition-colors"
+                  className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 text-slate-200 hover:text-white transition-colors"
                 >
-                  <FaGithub size={15} />
+                  <FaGithub size={16} />
                   GitHub
                 </a>
                 <a
                   href="https://linkedin.com/in/dhanvanth"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-200 hover:text-white transition-colors"
+                  className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 text-slate-200 hover:text-white transition-colors"
                 >
-                  <FaLinkedinIn size={15} className="text-emerald-400" />
+                  <FaLinkedinIn size={16} className="text-emerald-400" />
                   LinkedIn
                 </a>
                 <a
                   href="https://leetcode.com/dhanvanth"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-200 hover:text-white transition-colors"
+                  className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 text-slate-200 hover:text-white transition-colors"
                 >
-                  <SiLeetcode size={15} className="text-amber-400" />
+                  <SiLeetcode size={16} className="text-amber-400" />
                   LeetCode
                 </a>
               </div>

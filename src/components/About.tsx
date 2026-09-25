@@ -13,7 +13,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="relative z-10 py-6 md:py-10">
+    <section id="about" className="relative z-10 py-8 md:py-12">
       <div className="section-container" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -31,14 +31,14 @@ const About = () => {
         </motion.div>
 
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
-          {/* Spacious Bio Card */}
+          {/* Extra-Spacious Bio Card */}
           <motion.div
-            className="lg:col-span-7 glass-card rounded-3xl p-8 md:p-10 lg:p-12 flex flex-col justify-between"
+            className="lg:col-span-7 glass-card rounded-3xl p-10 md:p-12 lg:p-14 flex flex-col justify-between"
             initial={{ opacity: 0, x: -30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="space-y-6 md:space-y-7">
+            <div className="space-y-6 md:space-y-8">
               <p className="text-lg md:text-xl font-normal leading-relaxed text-slate-100">
                 I'm a <span className="text-white font-semibold underline decoration-emerald-500/50 decoration-2 underline-offset-4">Computer Science student</span> specializing
                 in <span className="gradient-text font-semibold">Artificial Intelligence & Machine Learning</span> at{' '}
@@ -62,7 +62,7 @@ const About = () => {
               </p>
               <div className="flex flex-wrap gap-3">
                 {['Artificial Intelligence', 'Machine Learning', 'Full-Stack Web Dev', 'Algorithmic Problem Solving', 'Database Design'].map((tag) => (
-                  <span key={tag} className="tech-tag text-xs md:text-sm px-4 py-1.5">
+                  <span key={tag} className="tech-tag text-xs md:text-sm px-4 py-2">
                     {tag}
                   </span>
                 ))}
@@ -70,32 +70,32 @@ const About = () => {
             </div>
           </motion.div>
 
-          {/* Spacious Stats & Education column */}
+          {/* Extra-Spacious Stats & Education column */}
           <motion.div
-            className="lg:col-span-5 flex flex-col justify-between gap-5"
+            className="lg:col-span-5 flex flex-col justify-between gap-6"
             initial={{ opacity: 0, x: 30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             {/* Stat cards grid */}
-            <div className="grid sm:grid-cols-3 lg:grid-cols-1 gap-5">
+            <div className="grid sm:grid-cols-3 lg:grid-cols-1 gap-6">
               {stats.map((stat, i) => (
                 <motion.div
                   key={stat.label}
                   initial={{ opacity: 0, y: 15 }}
                   animate={inView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.4, delay: 0.4 + i * 0.1 }}
-                  className="glass-card rounded-2xl p-6 md:p-7 flex items-center gap-5"
+                  className="glass-card rounded-3xl p-7 md:p-8 flex items-center gap-6"
                 >
                   <div
-                    className="w-13 h-13 rounded-2xl flex items-center justify-center shrink-0 text-emerald-400 bg-emerald-500/10 border border-emerald-500/20"
-                    style={{ width: '3.25rem', height: '3.25rem' }}
+                    className="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 text-emerald-400 bg-emerald-500/10 border border-emerald-500/20"
+                    style={{ width: '3.5rem', height: '3.5rem' }}
                   >
                     {stat.icon}
                   </div>
                   <div className="min-w-0">
                     <div className="text-2xl md:text-3xl font-extrabold text-white tracking-tight">{stat.value}</div>
-                    <div className="text-xs md:text-sm font-medium text-slate-400 mt-0.5">
+                    <div className="text-xs md:text-sm font-medium text-slate-400 mt-1">
                       {stat.label}
                     </div>
                   </div>
@@ -108,16 +108,16 @@ const About = () => {
               initial={{ opacity: 0, y: 15 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.4, delay: 0.7 }}
-              className="glass-card rounded-2xl p-7 md:p-8 border-emerald-500/20 space-y-4"
+              className="glass-card rounded-3xl p-8 md:p-10 border-emerald-500/20 space-y-5"
             >
               <div className="flex items-center justify-between gap-3">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 shrink-0">
-                    <FaGraduationCap size={18} />
+                <div className="flex items-center gap-3.5">
+                  <div className="w-11 h-11 rounded-xl flex items-center justify-center bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 shrink-0">
+                    <FaGraduationCap size={20} />
                   </div>
-                  <span className="font-bold text-white text-base">Formal Education</span>
+                  <span className="font-bold text-white text-base md:text-lg">Formal Education</span>
                 </div>
-                <span className="text-xs font-mono px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                <span className="text-xs font-mono px-3.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
                   Enrolled
                 </span>
               </div>
@@ -131,7 +131,7 @@ const About = () => {
                 </p>
               </div>
 
-              <div className="flex items-center justify-between text-xs md:text-sm text-slate-400 pt-4 border-t border-white/10">
+              <div className="flex items-center justify-between text-xs md:text-sm text-slate-400 pt-5 border-t border-white/10">
                 <span className="font-mono">2024 – 2028</span>
                 <span className="font-semibold text-slate-200">CGPA: 8.41</span>
               </div>

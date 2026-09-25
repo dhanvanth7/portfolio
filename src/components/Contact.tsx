@@ -45,7 +45,7 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="relative z-10 py-6 md:py-10">
+    <section id="contact" className="relative z-10 py-8 md:py-12">
       <div className="section-container" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -66,17 +66,17 @@ const Contact = () => {
         </motion.div>
 
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-          {/* Spacious Contact Form */}
+          {/* Extra-Spacious Contact Form Card */}
           <motion.div
             className="lg:col-span-7"
             initial={{ opacity: 0, x: -30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <form onSubmit={handleSubmit} className="glass-card rounded-3xl p-8 md:p-10 lg:p-12 space-y-6 md:space-y-7 border border-white/10">
+            <form onSubmit={handleSubmit} className="glass-card rounded-3xl p-10 md:p-12 lg:p-14 space-y-7 md:space-y-8 border border-white/10">
               <div className="grid sm:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="contact-name" className="block text-xs md:text-sm font-semibold text-slate-200 uppercase tracking-wider mb-2.5 font-mono">
+                  <label htmlFor="contact-name" className="block text-xs md:text-sm font-semibold text-slate-200 uppercase tracking-wider mb-3 font-mono">
                     Your Name
                   </label>
                   <input
@@ -84,13 +84,13 @@ const Contact = () => {
                     type="text"
                     required
                     placeholder="e.g. Alex Smith"
-                    className="form-input py-3.5 px-4.5"
+                    className="form-input py-4 px-5 text-base"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   />
                 </div>
                 <div>
-                  <label htmlFor="contact-email" className="block text-xs md:text-sm font-semibold text-slate-200 uppercase tracking-wider mb-2.5 font-mono">
+                  <label htmlFor="contact-email" className="block text-xs md:text-sm font-semibold text-slate-200 uppercase tracking-wider mb-3 font-mono">
                     Email Address
                   </label>
                   <input
@@ -98,7 +98,7 @@ const Contact = () => {
                     type="email"
                     required
                     placeholder="e.g. alex@example.com"
-                    className="form-input py-3.5 px-4.5"
+                    className="form-input py-4 px-5 text-base"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   />
@@ -106,7 +106,7 @@ const Contact = () => {
               </div>
 
               <div>
-                <label htmlFor="contact-message" className="block text-xs md:text-sm font-semibold text-slate-200 uppercase tracking-wider mb-2.5 font-mono">
+                <label htmlFor="contact-message" className="block text-xs md:text-sm font-semibold text-slate-200 uppercase tracking-wider mb-3 font-mono">
                   Message
                 </label>
                 <textarea
@@ -114,7 +114,7 @@ const Contact = () => {
                   required
                   rows={5}
                   placeholder="Share details about your message, role, or project..."
-                  className="form-input py-3.5 px-4.5 resize-none"
+                  className="form-input py-4 px-5 text-base resize-none"
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 />
@@ -122,7 +122,8 @@ const Contact = () => {
 
               <button
                 type="submit"
-                className="glow-btn w-full py-4 rounded-xl text-white font-bold text-base flex items-center justify-center gap-2.5 transition-transform active:scale-[0.99] shadow-md"
+                className="glow-btn w-full py-4.5 rounded-xl text-white font-bold text-base flex items-center justify-center gap-3 transition-transform active:scale-[0.99] shadow-md"
+                style={{ padding: '1.125rem' }}
               >
                 {submitted ? (
                   <>
@@ -139,36 +140,36 @@ const Contact = () => {
             </form>
           </motion.div>
 
-          {/* Spacious Contact Info Sidebar */}
+          {/* Extra-Spacious Contact Info Sidebar */}
           <motion.div
-            className="lg:col-span-5 space-y-5"
+            className="lg:col-span-5 space-y-6"
             initial={{ opacity: 0, x: 30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             {/* Contact details */}
-            <div className="space-y-4">
+            <div className="space-y-5">
               {contactInfo.map((info) => (
-                <div key={info.label} className="glass-card rounded-2xl p-6 flex items-center gap-5 border border-white/10">
+                <div key={info.label} className="glass-card rounded-2xl p-7 flex items-center gap-6 border border-white/10">
                   <div
-                    className="w-13 h-13 rounded-2xl flex items-center justify-center shrink-0 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
-                    style={{ width: '3.25rem', height: '3.25rem' }}
+                    className="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
+                    style={{ width: '3.5rem', height: '3.5rem' }}
                   >
                     {info.icon}
                   </div>
                   <div className="min-w-0">
-                    <p className="text-xs md:text-sm font-semibold uppercase tracking-wider text-slate-400 mb-1 font-mono">
+                    <p className="text-xs md:text-sm font-semibold uppercase tracking-wider text-slate-400 mb-1.5 font-mono">
                       {info.label}
                     </p>
                     {info.href ? (
                       <a
                         href={info.href}
-                        className="text-base font-bold text-slate-100 hover:text-emerald-400 transition-colors truncate block"
+                        className="text-base md:text-lg font-bold text-slate-100 hover:text-emerald-400 transition-colors truncate block"
                       >
                         {info.value}
                       </a>
                     ) : (
-                      <p className="text-base font-bold text-slate-100 truncate">{info.value}</p>
+                      <p className="text-base md:text-lg font-bold text-slate-100 truncate">{info.value}</p>
                     )}
                   </div>
                 </div>
@@ -176,11 +177,11 @@ const Contact = () => {
             </div>
 
             {/* Social links box */}
-            <div className="glass-card rounded-2xl p-6 border border-white/10">
+            <div className="glass-card rounded-2xl p-7 border border-white/10">
               <p className="text-xs md:text-sm font-semibold uppercase tracking-wider text-slate-400 mb-4 font-mono">
                 Social & Developer Profiles
               </p>
-              <div className="flex items-center gap-3.5">
+              <div className="flex items-center gap-4">
                 {socialLinks.map((social) => (
                   <a
                     key={social.label}
@@ -188,8 +189,10 @@ const Contact = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={social.label}
-                    className="w-12 h-12 rounded-xl flex items-center justify-center transition-transform duration-200 hover:scale-105"
+                    className="w-13 h-13 rounded-2xl flex items-center justify-center transition-transform duration-200 hover:scale-105"
                     style={{
+                      width: '3.25rem',
+                      height: '3.25rem',
                       background: 'rgba(255, 255, 255, 0.04)',
                       color: social.color,
                       border: '1px solid rgba(255, 255, 255, 0.1)',

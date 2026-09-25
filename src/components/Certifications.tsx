@@ -54,7 +54,7 @@ const Certifications = () => {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.15 });
 
   return (
-    <section id="certifications" className="relative z-10 py-6 md:py-10">
+    <section id="certifications" className="relative z-10 py-8 md:py-12">
       <div className="section-container" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -71,19 +71,21 @@ const Certifications = () => {
           <div className="section-divider" />
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-7">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-7 md:gap-8">
           {certifications.map((cert, i) => (
             <motion.div
               key={cert.name}
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.4, delay: 0.1 + i * 0.08 }}
-              className="glass-card rounded-2xl p-6 md:p-7 flex items-center justify-between gap-5 group"
+              className="glass-card rounded-3xl p-7 md:p-8 flex items-center justify-between gap-5 group"
             >
               <div className="flex items-center gap-4 min-w-0">
                 <div
-                  className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 transition-transform duration-200"
+                  className="w-13 h-13 rounded-2xl flex items-center justify-center shrink-0 transition-transform duration-200"
                   style={{
+                    width: '3.25rem',
+                    height: '3.25rem',
                     background: `${cert.color}18`,
                     color: cert.color,
                     border: `1px solid ${cert.color}35`,

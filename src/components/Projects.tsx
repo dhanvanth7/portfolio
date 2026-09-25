@@ -55,7 +55,7 @@ const Projects = () => {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <section id="projects" className="relative z-10 py-6 md:py-10">
+    <section id="projects" className="relative z-10 py-8 md:py-12">
       <div className="section-container" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -72,7 +72,7 @@ const Projects = () => {
           <div className="section-divider" />
         </motion.div>
 
-        <div className="space-y-10 md:space-y-12">
+        <div className="space-y-12 md:space-y-14">
           {projects.map((project, i) => (
             <motion.div
               key={project.title}
@@ -87,14 +87,14 @@ const Projects = () => {
                 style={{ background: project.gradient }}
               />
 
-              <div className="p-8 md:p-11 lg:p-14">
-                <div className="flex flex-col lg:flex-row lg:items-start gap-8">
+              <div className="p-10 md:p-14 lg:p-16">
+                <div className="flex flex-col lg:flex-row lg:items-start gap-9">
                   {/* Project Emblem */}
                   <div
-                    className="w-18 h-18 rounded-2xl flex items-center justify-center text-3xl shrink-0 transition-transform duration-300 group-hover:scale-105 shadow-xl"
+                    className="w-20 h-20 rounded-2xl flex items-center justify-center text-4xl shrink-0 transition-transform duration-300 group-hover:scale-105 shadow-xl"
                     style={{
-                      width: '4.5rem',
-                      height: '4.5rem',
+                      width: '5rem',
+                      height: '5rem',
                       background: project.gradient,
                     }}
                   >
@@ -103,32 +103,32 @@ const Projects = () => {
 
                   <div className="flex-1 min-w-0">
                     {/* Header Row: Title & Badge */}
-                    <div className="flex flex-wrap items-center justify-between gap-4 mb-3">
-                      <div className="flex flex-wrap items-center gap-3.5">
+                    <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
+                      <div className="flex flex-wrap items-center gap-4">
                         <h3 className="text-2xl md:text-3xl font-extrabold text-white tracking-tight">
                           {project.title}
                         </h3>
                         <span
-                          className={`text-xs md:text-sm font-semibold px-3.5 py-1.5 rounded-full border ${project.badgeColor}`}
+                          className={`text-xs md:text-sm font-semibold px-4 py-1.5 rounded-full border ${project.badgeColor}`}
                         >
                           {project.badge}
                         </span>
                       </div>
                     </div>
 
-                    <p className="text-base md:text-lg font-medium text-slate-300 mb-6">
+                    <p className="text-base md:text-lg font-medium text-slate-300 mb-7">
                       {project.subtitle}
                     </p>
 
-                    {/* Bullet descriptions with generous line spacing */}
-                    <div className="space-y-3.5 mb-8">
+                    {/* Bullet descriptions with extra line spacing */}
+                    <div className="space-y-4 mb-9">
                       {project.description.map((point, idx) => (
                         <div
                           key={idx}
-                          className="text-sm md:text-base leading-relaxed text-slate-300 flex items-start gap-3.5"
+                          className="text-sm md:text-base leading-relaxed text-slate-300 flex items-start gap-4"
                         >
                           <FaCheckCircle
-                            size={16}
+                            size={17}
                             className="mt-1 shrink-0 text-emerald-400"
                           />
                           <span>{point}</span>
@@ -137,13 +137,13 @@ const Projects = () => {
                     </div>
 
                     {/* Tech Stack Pills */}
-                    <div className="pt-6 border-t border-white/10 mb-8">
-                      <p className="text-xs md:text-sm font-mono uppercase tracking-wider text-slate-400 mb-3.5 flex items-center gap-2">
+                    <div className="pt-7 border-t border-white/10 mb-9">
+                      <p className="text-xs md:text-sm font-mono uppercase tracking-wider text-slate-400 mb-4 flex items-center gap-2">
                         <FaProjectDiagram size={14} className="text-emerald-400" /> Technologies & Tools
                       </p>
-                      <div className="flex flex-wrap gap-2.5">
+                      <div className="flex flex-wrap gap-3">
                         {project.tech.map((t) => (
-                          <span key={t} className="tech-tag text-xs md:text-sm px-3.5 py-1.5">
+                          <span key={t} className="tech-tag text-xs md:text-sm px-4 py-1.5">
                             {t}
                           </span>
                         ))}
@@ -156,7 +156,7 @@ const Projects = () => {
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl text-sm font-semibold text-slate-200 bg-white/5 hover:bg-white/10 border border-white/10 transition-all duration-200 hover:text-white hover:border-emerald-500/40"
+                        className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl text-sm font-semibold text-slate-200 bg-white/5 hover:bg-white/10 border border-white/10 transition-all duration-200 hover:text-white hover:border-emerald-500/40"
                       >
                         <FaGithub size={18} />
                         Source Code
@@ -165,7 +165,7 @@ const Projects = () => {
                         href={project.demo}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl text-sm font-semibold text-white bg-emerald-600/30 hover:bg-emerald-600/50 border border-emerald-500/40 transition-all duration-200"
+                        className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl text-sm font-semibold text-white bg-emerald-600/30 hover:bg-emerald-600/50 border border-emerald-500/40 transition-all duration-200"
                       >
                         <HiExternalLink size={18} className="text-emerald-300" />
                         Live Demo
