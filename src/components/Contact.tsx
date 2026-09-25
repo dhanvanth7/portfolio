@@ -19,19 +19,19 @@ const Contact = () => {
 
   const contactInfo = [
     {
-      icon: <HiMail size={18} />,
+      icon: <HiMail size={20} />,
       label: 'Email Address',
       value: 'dhanvanth.narla@gmail.com',
       href: 'mailto:dhanvanth.narla@gmail.com',
     },
     {
-      icon: <HiPhone size={18} />,
+      icon: <HiPhone size={20} />,
       label: 'Direct Phone',
       value: '+91 7989470172',
       href: 'tel:+917989470172',
     },
     {
-      icon: <HiLocationMarker size={18} />,
+      icon: <HiLocationMarker size={20} />,
       label: 'Location',
       value: 'Anakapalli, Andhra Pradesh, India',
       href: null,
@@ -39,13 +39,13 @@ const Contact = () => {
   ];
 
   const socialLinks = [
-    { icon: <FaLinkedinIn size={16} />, href: 'https://linkedin.com/in/dhanvanth', label: 'LinkedIn', color: '#38bdf8' },
-    { icon: <FaGithub size={16} />, href: 'https://github.com/dhanvanth', label: 'GitHub', color: '#f1f5f9' },
-    { icon: <SiGmail size={16} />, href: 'mailto:dhanvanth.narla@gmail.com', label: 'Gmail', color: '#f87171' },
+    { icon: <FaLinkedinIn size={18} />, href: 'https://linkedin.com/in/dhanvanth', label: 'LinkedIn', color: '#38bdf8' },
+    { icon: <FaGithub size={18} />, href: 'https://github.com/dhanvanth', label: 'GitHub', color: '#f1f5f9' },
+    { icon: <SiGmail size={18} />, href: 'mailto:dhanvanth.narla@gmail.com', label: 'Gmail', color: '#f87171' },
   ];
 
   return (
-    <section id="contact" className="relative z-10">
+    <section id="contact" className="relative z-10 py-6 md:py-10">
       <div className="section-container" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -53,30 +53,30 @@ const Contact = () => {
           transition={{ duration: 0.6 }}
         >
           <div className="flex items-center gap-2 mb-3">
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-            <span className="text-xs font-mono tracking-widest text-emerald-400 uppercase">Direct Channel</span>
+            <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
+            <span className="text-xs md:text-sm font-mono tracking-widest text-emerald-400 uppercase">Direct Channel</span>
           </div>
           <h2 className="section-heading">
             Get In <span className="gradient-text">Touch</span>
           </h2>
           <div className="section-divider" />
-          <p className="text-sm md:text-base mb-10 max-w-xl text-slate-300">
+          <p className="text-base md:text-lg mb-12 max-w-2xl text-slate-300 leading-relaxed">
             Have an opportunity, internship role, or project you'd like to collaborate on? Feel free to reach out directly through the form or my personal channels below.
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-12 gap-8 items-start">
-          {/* Contact form */}
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+          {/* Spacious Contact Form */}
           <motion.div
             className="lg:col-span-7"
             initial={{ opacity: 0, x: -30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <form onSubmit={handleSubmit} className="glass-card rounded-2xl p-6 md:p-8 space-y-5 border border-white/5">
-              <div className="grid sm:grid-cols-2 gap-5">
+            <form onSubmit={handleSubmit} className="glass-card rounded-3xl p-8 md:p-10 lg:p-12 space-y-6 md:space-y-7 border border-white/10">
+              <div className="grid sm:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="contact-name" className="block text-xs font-semibold text-slate-200 uppercase tracking-wider mb-2 font-mono">
+                  <label htmlFor="contact-name" className="block text-xs md:text-sm font-semibold text-slate-200 uppercase tracking-wider mb-2.5 font-mono">
                     Your Name
                   </label>
                   <input
@@ -84,13 +84,13 @@ const Contact = () => {
                     type="text"
                     required
                     placeholder="e.g. Alex Smith"
-                    className="form-input"
+                    className="form-input py-3.5 px-4.5"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   />
                 </div>
                 <div>
-                  <label htmlFor="contact-email" className="block text-xs font-semibold text-slate-200 uppercase tracking-wider mb-2 font-mono">
+                  <label htmlFor="contact-email" className="block text-xs md:text-sm font-semibold text-slate-200 uppercase tracking-wider mb-2.5 font-mono">
                     Email Address
                   </label>
                   <input
@@ -98,7 +98,7 @@ const Contact = () => {
                     type="email"
                     required
                     placeholder="e.g. alex@example.com"
-                    className="form-input"
+                    className="form-input py-3.5 px-4.5"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   />
@@ -106,7 +106,7 @@ const Contact = () => {
               </div>
 
               <div>
-                <label htmlFor="contact-message" className="block text-xs font-semibold text-slate-200 uppercase tracking-wider mb-2 font-mono">
+                <label htmlFor="contact-message" className="block text-xs md:text-sm font-semibold text-slate-200 uppercase tracking-wider mb-2.5 font-mono">
                   Message
                 </label>
                 <textarea
@@ -114,7 +114,7 @@ const Contact = () => {
                   required
                   rows={5}
                   placeholder="Share details about your message, role, or project..."
-                  className="form-input resize-none"
+                  className="form-input py-3.5 px-4.5 resize-none"
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 />
@@ -122,16 +122,16 @@ const Contact = () => {
 
               <button
                 type="submit"
-                className="glow-btn w-full py-3.5 rounded-xl text-white font-semibold text-sm flex items-center justify-center gap-2 transition-transform active:scale-[0.99]"
+                className="glow-btn w-full py-4 rounded-xl text-white font-bold text-base flex items-center justify-center gap-2.5 transition-transform active:scale-[0.99] shadow-md"
               >
                 {submitted ? (
                   <>
-                    <span className="w-4 h-4 border-2 border-white/40 border-t-white rounded-full animate-spin" />
+                    <span className="w-5 h-5 border-2 border-white/40 border-t-white rounded-full animate-spin" />
                     <span>Message Sent Successfully!</span>
                   </>
                 ) : (
                   <>
-                    <HiPaperAirplane size={15} className="rotate-90 text-white" />
+                    <HiPaperAirplane size={18} className="rotate-90 text-white" />
                     <span>Send Message</span>
                   </>
                 )}
@@ -139,47 +139,48 @@ const Contact = () => {
             </form>
           </motion.div>
 
-          {/* Contact info sidebar */}
+          {/* Spacious Contact Info Sidebar */}
           <motion.div
-            className="lg:col-span-5 space-y-4"
+            className="lg:col-span-5 space-y-5"
             initial={{ opacity: 0, x: 30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             {/* Contact details */}
-            <div className="space-y-3">
+            <div className="space-y-4">
               {contactInfo.map((info) => (
-                <div key={info.label} className="glass-card rounded-xl p-4 md:p-5 flex items-center gap-4 border border-white/5">
+                <div key={info.label} className="glass-card rounded-2xl p-6 flex items-center gap-5 border border-white/10">
                   <div
-                    className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
+                    className="w-13 h-13 rounded-2xl flex items-center justify-center shrink-0 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
+                    style={{ width: '3.25rem', height: '3.25rem' }}
                   >
                     {info.icon}
                   </div>
                   <div className="min-w-0">
-                    <p className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-0.5 font-mono">
+                    <p className="text-xs md:text-sm font-semibold uppercase tracking-wider text-slate-400 mb-1 font-mono">
                       {info.label}
                     </p>
                     {info.href ? (
                       <a
                         href={info.href}
-                        className="text-sm font-semibold text-slate-100 hover:text-emerald-400 transition-colors truncate block"
+                        className="text-base font-bold text-slate-100 hover:text-emerald-400 transition-colors truncate block"
                       >
                         {info.value}
                       </a>
                     ) : (
-                      <p className="text-sm font-semibold text-slate-100 truncate">{info.value}</p>
+                      <p className="text-base font-bold text-slate-100 truncate">{info.value}</p>
                     )}
                   </div>
                 </div>
               ))}
             </div>
 
-            {/* Social links */}
-            <div className="glass-card rounded-xl p-5 border border-white/5">
-              <p className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-3.5 font-mono">
+            {/* Social links box */}
+            <div className="glass-card rounded-2xl p-6 border border-white/10">
+              <p className="text-xs md:text-sm font-semibold uppercase tracking-wider text-slate-400 mb-4 font-mono">
                 Social & Developer Profiles
               </p>
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3.5">
                 {socialLinks.map((social) => (
                   <a
                     key={social.label}
@@ -187,11 +188,11 @@ const Contact = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={social.label}
-                    className="w-11 h-11 rounded-xl flex items-center justify-center transition-transform duration-200 hover:scale-105"
+                    className="w-12 h-12 rounded-xl flex items-center justify-center transition-transform duration-200 hover:scale-105"
                     style={{
                       background: 'rgba(255, 255, 255, 0.04)',
                       color: social.color,
-                      border: '1px solid rgba(255, 255, 255, 0.08)',
+                      border: '1px solid rgba(255, 255, 255, 0.1)',
                     }}
                     onMouseEnter={(e) => {
                       e.currentTarget.style.borderColor = social.color;
@@ -199,7 +200,7 @@ const Contact = () => {
                       e.currentTarget.style.boxShadow = `0 0 16px ${social.color}40`;
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.08)';
+                      e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.1)';
                       e.currentTarget.style.background = 'rgba(255, 255, 255, 0.04)';
                       e.currentTarget.style.boxShadow = 'none';
                     }}

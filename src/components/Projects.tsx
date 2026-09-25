@@ -20,7 +20,7 @@ const projects: Project[] = [
   {
     title: 'AI Mentor',
     badge: 'Interview Prep Platform',
-    badgeColor: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20',
+    badgeColor: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/30',
     subtitle: 'Personalized AI-Powered Career Coaching & Technical Mock System',
     description: [
       'Designed and engineered a full-stack platform to streamline technical interview preparation for engineering students.',
@@ -36,7 +36,7 @@ const projects: Project[] = [
   {
     title: 'BIS SmartAssist',
     badge: 'Smart India Hackathon',
-    badgeColor: 'text-teal-400 bg-teal-500/10 border-teal-500/20',
+    badgeColor: 'text-teal-400 bg-teal-500/10 border-teal-500/30',
     subtitle: 'Intelligent Standards Compliance & Verification Assistant',
     description: [
       'Architected an intelligent assistant layered on the Bureau of Indian Standards (BIS) regulatory framework for seamless compliance checking.',
@@ -55,7 +55,7 @@ const Projects = () => {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <section id="projects" className="relative z-10">
+    <section id="projects" className="relative z-10 py-6 md:py-10">
       <div className="section-container" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -63,8 +63,8 @@ const Projects = () => {
           transition={{ duration: 0.6 }}
         >
           <div className="flex items-center gap-2 mb-3">
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-            <span className="text-xs font-mono tracking-widest text-emerald-400 uppercase">Portfolio Showcase</span>
+            <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
+            <span className="text-xs md:text-sm font-mono tracking-widest text-emerald-400 uppercase">Portfolio Showcase</span>
           </div>
           <h2 className="section-heading">
             Featured <span className="gradient-text">Projects</span>
@@ -72,27 +72,29 @@ const Projects = () => {
           <div className="section-divider" />
         </motion.div>
 
-        <div className="space-y-8">
+        <div className="space-y-10 md:space-y-12">
           {projects.map((project, i) => (
             <motion.div
               key={project.title}
               initial={{ opacity: 0, y: 35 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 + i * 0.2 }}
-              className="glass-card rounded-2xl overflow-hidden group border border-white/5"
+              className="glass-card rounded-3xl overflow-hidden group border border-white/10"
             >
               {/* Gradient accent top bar */}
               <div
-                className="h-1.5 transition-all duration-500 group-hover:h-2"
+                className="h-2 transition-all duration-500 group-hover:h-2.5"
                 style={{ background: project.gradient }}
               />
 
-              <div className="p-6 md:p-8 lg:p-10">
-                <div className="flex flex-col lg:flex-row lg:items-start gap-6">
+              <div className="p-8 md:p-11 lg:p-14">
+                <div className="flex flex-col lg:flex-row lg:items-start gap-8">
                   {/* Project Emblem */}
                   <div
-                    className="w-16 h-16 rounded-2xl flex items-center justify-center text-3xl shrink-0 transition-transform duration-500 group-hover:scale-110 shadow-lg"
+                    className="w-18 h-18 rounded-2xl flex items-center justify-center text-3xl shrink-0 transition-transform duration-300 group-hover:scale-105 shadow-xl"
                     style={{
+                      width: '4.5rem',
+                      height: '4.5rem',
                       background: project.gradient,
                     }}
                   >
@@ -101,32 +103,32 @@ const Projects = () => {
 
                   <div className="flex-1 min-w-0">
                     {/* Header Row: Title & Badge */}
-                    <div className="flex flex-wrap items-center justify-between gap-3 mb-2">
-                      <div className="flex items-center gap-3">
-                        <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight">
+                    <div className="flex flex-wrap items-center justify-between gap-4 mb-3">
+                      <div className="flex flex-wrap items-center gap-3.5">
+                        <h3 className="text-2xl md:text-3xl font-extrabold text-white tracking-tight">
                           {project.title}
                         </h3>
                         <span
-                          className={`text-xs font-semibold px-3 py-1 rounded-full border ${project.badgeColor}`}
+                          className={`text-xs md:text-sm font-semibold px-3.5 py-1.5 rounded-full border ${project.badgeColor}`}
                         >
                           {project.badge}
                         </span>
                       </div>
                     </div>
 
-                    <p className="text-sm font-medium text-slate-300 mb-5">
+                    <p className="text-base md:text-lg font-medium text-slate-300 mb-6">
                       {project.subtitle}
                     </p>
 
-                    {/* Bullet descriptions */}
-                    <div className="space-y-2.5 mb-6">
+                    {/* Bullet descriptions with generous line spacing */}
+                    <div className="space-y-3.5 mb-8">
                       {project.description.map((point, idx) => (
                         <div
                           key={idx}
-                          className="text-xs md:text-sm leading-relaxed text-slate-300 flex items-start gap-3"
+                          className="text-sm md:text-base leading-relaxed text-slate-300 flex items-start gap-3.5"
                         >
                           <FaCheckCircle
-                            size={14}
+                            size={16}
                             className="mt-1 shrink-0 text-emerald-400"
                           />
                           <span>{point}</span>
@@ -135,13 +137,13 @@ const Projects = () => {
                     </div>
 
                     {/* Tech Stack Pills */}
-                    <div className="pt-4 border-t border-white/5 mb-6">
-                      <p className="text-xs font-mono uppercase tracking-wider text-slate-400 mb-2.5 flex items-center gap-1.5">
-                        <FaProjectDiagram size={12} className="text-emerald-400" /> Technologies & Tools
+                    <div className="pt-6 border-t border-white/10 mb-8">
+                      <p className="text-xs md:text-sm font-mono uppercase tracking-wider text-slate-400 mb-3.5 flex items-center gap-2">
+                        <FaProjectDiagram size={14} className="text-emerald-400" /> Technologies & Tools
                       </p>
-                      <div className="flex flex-wrap gap-2">
+                      <div className="flex flex-wrap gap-2.5">
                         {project.tech.map((t) => (
-                          <span key={t} className="tech-tag">
+                          <span key={t} className="tech-tag text-xs md:text-sm px-3.5 py-1.5">
                             {t}
                           </span>
                         ))}
@@ -149,23 +151,23 @@ const Projects = () => {
                     </div>
 
                     {/* Action Links */}
-                    <div className="flex flex-wrap items-center gap-4">
+                    <div className="flex flex-wrap items-center gap-4 pt-2">
                       <a
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs md:text-sm font-medium text-slate-200 bg-white/5 hover:bg-white/10 border border-white/10 transition-all duration-200 hover:text-white hover:border-emerald-500/40"
+                        className="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl text-sm font-semibold text-slate-200 bg-white/5 hover:bg-white/10 border border-white/10 transition-all duration-200 hover:text-white hover:border-emerald-500/40"
                       >
-                        <FaGithub size={16} />
+                        <FaGithub size={18} />
                         Source Code
                       </a>
                       <a
                         href={project.demo}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs md:text-sm font-medium text-white bg-emerald-600/30 hover:bg-emerald-600/50 border border-emerald-500/40 transition-all duration-200"
+                        className="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl text-sm font-semibold text-white bg-emerald-600/30 hover:bg-emerald-600/50 border border-emerald-500/40 transition-all duration-200"
                       >
-                        <HiExternalLink size={16} className="text-emerald-300" />
+                        <HiExternalLink size={18} className="text-emerald-300" />
                         Live Demo
                       </a>
                     </div>
